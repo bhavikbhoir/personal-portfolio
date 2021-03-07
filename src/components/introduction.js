@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Row, Col, Container} from 'react-bootstrap';
 import styled from 'styled-components';
-import { FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaUser, FaMedium } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaUser, FaMedium, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { GoGlobe } from 'react-icons/go';
 import Cover from '../assets/cover.png'
 import DP from '../assets/pp.jpg'
@@ -13,7 +13,7 @@ const Styles = styled.div`
         margin: 0px!important;
     }
     img{
-        width: 100%;
+        width: 80%;
         border-radius: 50%;
     }
     .col{
@@ -56,6 +56,17 @@ const Styles = styled.div`
         margin: 0 10px;
         font-size: 20px;
     }
+    .contact {
+        display: flex;
+    }
+    @media screen and (max-width: 1440px) {
+        .contact{
+            display: block;
+        }
+        .contact li:first-child{
+            margin-bottom: 0.5rem
+        }
+    }
 `;
 
 export const Introduction = () => (
@@ -90,13 +101,18 @@ export const Introduction = () => (
                         </Row>
                         <Row style={{display: "inline-block", textAlign: "center"}}>
                             <h3>Web Developer</h3>
-                            <Col className="icons">
+                            {/* <Col className="icons">
                                 <li><a href="https://www.linkedin.com/in/bhavikbhoir/"><FaLinkedin /></a></li>
                                 <li><a href="https://github.com/bhavikbhoir"><FaGithub /></a></li>
                                 <li><a href="https://medium.com/@bhvkbhoir95"><FaMedium /></a></li>
                                 <li><a href="https://www.facebook.com/bbhoir"><FaFacebook /></a></li>
                                 <li><a href="https://www.instagram.com/bhavik_08/"><FaInstagram /></a></li>
-                                <li><a href="https://bbhoir.web.app/"><GoGlobe /></a></li>                         
+                                <li><a href="https://bbhoir.web.app/"><GoGlobe /></a></li>     
+                                <br/>                    
+                            </Col> */}
+                            <Col className="contact">
+                                <li><FaPhone /> +1-571-635-7991</li>
+                                <li className="ml-3"><FaEnvelope /> bhvkbhoir95@gmail.com</li>
                             </Col>
                         </Row>
                     </Col>

@@ -106,7 +106,7 @@ export const Employers = () => (
         <Card.Text>
           <FaUser /> Web Developer
           <br/>
-          <FaMapMarkerAlt /> Morrisville, NC
+          <FaMapMarkerAlt /> Remote
         </Card.Text>
         </Card.Body>
         </Col>
