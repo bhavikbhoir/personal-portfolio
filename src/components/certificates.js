@@ -22,6 +22,7 @@ h2{
 }
 .card-columns{
     column-count: 2;
+    widows: 2
 }
 .card-body{
     background-color: #39b2cc;

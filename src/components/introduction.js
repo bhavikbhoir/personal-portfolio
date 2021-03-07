@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Row, Col, Container} from 'react-bootstrap';
 import styled from 'styled-components';
-import { FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaUser, FaMedium, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaUser, FaMedium, FaPhone, FaEnvelope, FaAt } from 'react-icons/fa';
 import { GoGlobe } from 'react-icons/go';
 import Cover from '../assets/cover.png'
 import DP from '../assets/pp.jpg'
@@ -13,7 +13,7 @@ const Styles = styled.div`
         margin: 0px!important;
     }
     img{
-        width: 80%;
+        width: 75%;
         border-radius: 50%;
     }
     .col{
@@ -59,7 +59,15 @@ const Styles = styled.div`
     .contact {
         display: flex;
     }
+    .contact li a {
+        text-decoration: none;
+        color: initial;
+    }
     @media screen and (max-width: 1440px) {
+        img{
+            width: 85%;
+            border-radius: 50%;
+        }
         .contact{
             display: block;
         }
@@ -71,7 +79,7 @@ const Styles = styled.div`
 
 export const Introduction = () => (
     <Styles>
-                <Row>
+                <Row className="introduction">
                     {/* <Col xl={12}>
                         <img src={Cover}/>
                         <h3 className="text-center">Engineer, Designer, Developer, Gamer, Sketch artist, Sports enthusiast, Blogger, and aiming for much more.</h3>
@@ -83,12 +91,12 @@ export const Introduction = () => (
                     Designing and building interactive, responsive, scalable, user-friendly websites and applications complying with the cross-browser compatibility and World Wide Web Consortium (W3C) guidelines is truly a passion of mine. In addition to my knowledge base, I actively seek out new technologies and stay up to date on industry trends and advancements. This has allowed me to stay ahead of the curve and deliver exceptional work in all my previous roles.
                     </Col> */}
                     <Col xl={6} lg={6} id="summary">
-                    <h2 style={{textAlign:"center"}}>ABOUT ME</h2>
+                    <h2 style={{textAlign:"center", borderBottom: "2px solid darkgrey"}}>ABOUT ME</h2>
                     <br/>
-                    Creative and passionate Web Developer with experience in designing prototypes using Figma, InVision, Photoshop and developing interactive websites using HTML5, CSS3, Bootstrap, JavaScript, React JS, and Angular.
+                    Creative and passionate Web Developer with experience in designing prototypes and developing interactive websites.
                     <br/>
                     <br/>
-                    Designing and building interactive, responsive, scalable, user-friendly websites and applications complying with the cross-browser compatibility and World Wide Web Consortium (W3C) guidelines is truly a passion of mine. 
+                    Designing and building responsive, scalable, user-friendly websites and applications complying with the cross-browser compatibility and World Wide Web Consortium (W3C) guidelines is truly a passion of mine. 
                     <br/>
                     <br/>
                     In addition to my knowledge base, I actively seek out new technologies and stay up to date on industry trends and advancements. This has allowed me to stay ahead of the curve and deliver exceptional work in all my previous roles.
@@ -99,7 +107,7 @@ export const Introduction = () => (
                                 <img src={DP}/>
                             </Col>
                         </Row>
-                        <Row style={{display: "inline-block", textAlign: "center"}}>
+                        <Row style={{display: "inline-block", textAlign: "center", paddingTop: "0"}}>
                             <h3>Web Developer</h3>
                             {/* <Col className="icons">
                                 <li><a href="https://www.linkedin.com/in/bhavikbhoir/"><FaLinkedin /></a></li>
@@ -111,8 +119,8 @@ export const Introduction = () => (
                                 <br/>                    
                             </Col> */}
                             <Col className="contact">
-                                <li><FaPhone /> +1-571-635-7991</li>
-                                <li className="ml-3"><FaEnvelope /> bhvkbhoir95@gmail.com</li>
+                                <li><FaPhone /> <a href="tel:1-571-635-7991">+1 (571) 635-7991</a></li>
+                                <li className="ml-3"><FaAt /> <a href = "mailto: bhvkbhoir95@gmail.com">bhvkbhoir95@gmail.com</a></li>
                             </Col>
                         </Row>
                     </Col>

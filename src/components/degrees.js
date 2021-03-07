@@ -66,7 +66,7 @@ export const Degrees = () => (
                     <div className="degree-header">
                         <Row>
                             <Col className="university-img" lg={4} md={5} sm={5}>
-                                <Card.Img variant="top" src="https://images-na.ssl-images-amazon.com/images/I/716di4PQTVL._SY355_.png" />
+                                <Card.Img variant="top" src="https://img2.pngio.com/mumbai-university-logo-png-4-png-image-university-of-mumbai-png-400_400.png" />
                             </Col>
                             <Col>
                                 <Card.Title>Bachelor of Engineering <br/> Electronics and Telecommunications Engineering</Card.Title>
