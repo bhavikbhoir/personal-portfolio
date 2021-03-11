@@ -93,7 +93,7 @@ export const Introduction = () => (
                     <Col xl={6} lg={6} id="summary">
                     <h2 style={{textAlign:"center", borderBottom: "2px solid darkgrey"}}>ABOUT ME</h2>
                     <br/>
-                    Creative and passionate Web Developer with experience in designing prototypes and developing interactive websites.
+                    Creative and passionate Web Developer with experience in designing and developing interactive websites.
                     <br/>
                     <br/>
                     Designing and building responsive, scalable, user-friendly websites and applications complying with the cross-browser compatibility and World Wide Web Consortium (W3C) guidelines is truly a passion of mine. 

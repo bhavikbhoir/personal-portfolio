@@ -62,8 +62,51 @@ ul{
 
 export const Misc = () => (
     <Styles>
-        <h2>Misc Projects</h2>
+        <h2>Miscellaneous Projects</h2>
         <CardColumns>    
+            <Card>
+            <Row>
+                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Card.Img variant="top" src={RCD} width="auto"/>
+                </Col>
+                <Col xl={11} xs={10}>
+                <Card.Body style={{paddingLeft: "0"}}>
+                <Card.Title>React Decimal Counter</Card.Title>
+                <Card.Text>
+                The decimal counter increases the initial count by decimal places. Also, we will be saving the count in our local storage so that we don't lose the count on page refresh or when we close the browser/window.
+                </Card.Text>
+                <Card.Link href="https://github.com/bhavikbhoir/react-counter" target="_blank"><FaGithub/> GitHub</Card.Link>
+                <Card.Link href="https://react-counters.herokuapp.com/" target="_blank"><GoGlobe/> Live Version</Card.Link>
+                <Card.Link href="https://medium.com/@bhvkbhoir95/react-decimal-counter-f4034a0917a1" target="_blank"><FaMedium/> Blog</Card.Link>
+                </Card.Body>
+                </Col>
+                
+                <Col lg={12}><img src={RCD_Home} width="100%"/></Col>
+
+                <Col style={{textAlign: "center"}}>
+                    <Row>
+                        <Col>
+                        <h6>Tech stack</h6>
+                        <ul>
+                            <li>React</li >
+                            <li>React-Bootstrap</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        </Col>
+                        <Col>
+                        <h6>Tools</h6>
+                        <ul>
+                            <li>Heroku App for deployment</li>
+                            <li>GitHub (Desktop/Git Terminal)</li>
+                            <li>Medium (Publishing)</li>
+                        </ul>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            </Card>
             <Card>
             <Row>
                 <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
@@ -108,50 +151,6 @@ export const Misc = () => (
                 </Col>
             </Row>
             </Card>
-
-            <Card>
-            <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
-                <Card.Img variant="top" src={RCD} width="auto"/>
-                </Col>
-                <Col xl={11} xs={10}>
-                <Card.Body style={{paddingLeft: "0"}}>
-                <Card.Title>React Decimal Counter</Card.Title>
-                <Card.Text>
-                The decimal counter increases the initial count by decimal places. Also, we will be saving the count in our local storage so that we don't lose the count on page refresh or when we close the browser/window.
-                </Card.Text>
-                <Card.Link href="https://github.com/bhavikbhoir/react-counter" target="_blank"><FaGithub/> GitHub</Card.Link>
-                <Card.Link href="https://react-counters.herokuapp.com/" target="_blank"><GoGlobe/> Live Version</Card.Link>
-                <Card.Link href="https://medium.com/@bhvkbhoir95/react-decimal-counter-f4034a0917a1" target="_blank"><FaMedium/> Blog</Card.Link>
-                </Card.Body>
-                </Col>
-                
-                <Col lg={12}><img src={RCD_Home} width="100%"/></Col>
-
-                <Col style={{textAlign: "center"}}>
-                    <Row>
-                        <Col>
-                        <h6>Tech stack</h6>
-                        <ul>
-                            <li>React</li >
-                            <li>React-Bootstrap</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                        </ul>
-                        </Col>
-                        <Col>
-                        <h6>Tools</h6>
-                        <ul>
-                            <li>Heroku App for deployment</li>
-                            <li>GitHub (Desktop/Git Terminal)</li>
-                            <li>Medium (Publishing)</li>
-                        </ul>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-            </Card>
-        </CardColumns>
+</CardColumns>
     </Styles>
 )
