@@ -30,9 +30,9 @@ img{
     height: 100%;
     // padding: 15px;
 }
-.degree-header{
-    min-height: 135px
-}
+// .degree-header{
+//     min-height: 135px
+// }
 `;
 
 export const Degrees = () => (
@@ -43,9 +43,9 @@ export const Degrees = () => (
                <Card.Body>
                     <div className="degree-header">
                         <Row>
-                            <Col className="university-img" lg={4} md={5} sm={5}>
+                            {/* <Col className="university-img" lg={4} md={5} sm={5}>
                                 <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Texas_A%26M_University%E2%80%93Kingsville_seal.svg/1200px-Texas_A%26M_University%E2%80%93Kingsville_seal.svg.png" />
-                            </Col>
+                            </Col> */}
                             <Col>
                                 <Card.Title>Master of Science <br/> Electrical Engineering</Card.Title>
                                 <Card.Text>
@@ -54,19 +54,6 @@ export const Degrees = () => (
                                 <Card.Text>
                                     <strong>Coursework:</strong> Digital Image Processing, Microwave Engineering, Digital Signal Processing, Wireless Networks, Principles of VLSI Design, Rapid Prototyping and ASIC Design.
                                 </Card.Text>
-                            </Col>
-                        </Row>
-                    </div>
-                    {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-                </Card>
-            
-                <Card>
-               <Card.Body>
-                    <div className="degree-header">
-                        <Row>
-                            <Col className="university-img" lg={4} md={5} sm={5}>
-                                <Card.Img variant="top" src="https://img2.pngio.com/mumbai-university-logo-png-4-png-image-university-of-mumbai-png-400_400.png" />
                             </Col>
                             <Col>
                                 <Card.Title>Bachelor of Engineering <br/> Electronics and Telecommunications Engineering</Card.Title>

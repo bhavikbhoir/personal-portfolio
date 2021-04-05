@@ -68,14 +68,14 @@ ul{
 
 export const Personal = () => (
     <Styles style={{width: "100%"}}>
-        <h2>Personal Projects</h2>
+        {/* <h2>Personal Projects</h2> */}
         <CardColumns>    
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={TGWLogo} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>The Gooners World</Card.Title>
                 <Card.Text>
@@ -86,7 +86,7 @@ export const Personal = () => (
                 </Card.Body>
                 </Col>
                 
-                <img src={TGW} width="100%"/>
+                {/* <img src={TGW} width="100%"/>
 
                 <Col style={{textAlign: "center"}}>
                     <Row>
@@ -110,17 +110,17 @@ export const Personal = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             </Card>
 
             
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={covid} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>Covid Tracker</Card.Title>
                 <Card.Text>
@@ -131,7 +131,7 @@ export const Personal = () => (
                 </Card.Body>
                 </Col>
                 
-                <img src={covid_page} width="100%"/>
+                {/* <img src={covid_page} width="100%"/>
 
                 <Col style={{textAlign: "center"}}>
                     <Row>
@@ -155,16 +155,16 @@ export const Personal = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             </Card>
 
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={FBBA} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>The Foot'BB'all App</Card.Title>
                 <Card.Text>
@@ -175,7 +175,7 @@ export const Personal = () => (
                 </Card.Body>
                 </Col>
                 
-                <img src={FootBBall} width="100%"/>
+                {/* <img src={FootBBall} width="100%"/>
 
                 <Col style={{textAlign: "center"}}>
                     <div>
@@ -202,16 +202,16 @@ export const Personal = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             </Card>
 
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={FT} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>FootyTabs</Card.Title>
                 <Card.Text>
@@ -223,7 +223,7 @@ export const Personal = () => (
                 </Card.Body>
                 </Col>
                 
-                <img src={FootyTabs} width="100%"/>
+                {/* <img src={FootyTabs} width="100%"/>
 
                 <Col style={{textAlign: "center"}}>
                     <Row>
@@ -248,7 +248,7 @@ export const Personal = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             </Card>
         </CardColumns>

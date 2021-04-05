@@ -11,7 +11,7 @@ h2{
     // font-weight: 700;
 }
 .card-columns {
-    column-count: 1;
+    column-count: 1!important;
     text-align: left;
 }
 .card-columns .card{
@@ -54,14 +54,14 @@ ul{
 
 export const Tamuk = () => (
     <Styles>
-        <h2>TAMUK Projects</h2>
+        {/* <h2>TAMUK Projects</h2> */}
         <CardColumns>    
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                {/* <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Texas_A%26M_University%E2%80%93Kingsville_seal.svg/1200px-Texas_A%26M_University%E2%80%93Kingsville_seal.svg.png" width="auto"/>
-                </Col>
-                <Col xl={11} xs={10}>
+                </Col> */}
+                <Col>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>Thesis <br/> Quality Analysis of Lossy Image Compression techniques<br/><small>July 2018 – April 2019</small></Card.Title>            
                 <Card.Link href="https://github.com/bhavikbhoir/Thesis" target="_blank"><FaGithub/> GitHub</Card.Link>
@@ -77,7 +77,7 @@ export const Tamuk = () => (
                     </Row>
                 </Col>
 
-                <Col style={{textAlign: "center"}}>
+                {/* <Col style={{textAlign: "center"}}>
                     <Row>
                         <Col>
                         <h6>Tech stack</h6>
@@ -89,7 +89,7 @@ export const Tamuk = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             
             </Card>

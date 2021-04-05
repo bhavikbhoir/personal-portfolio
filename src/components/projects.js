@@ -1,201 +1,120 @@
 import React, { Component } from 'react';
-import {Row, Col, Button, Container, CardColumns} from 'react-bootstrap';
 import styled from 'styled-components';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import Card from 'react-bootstrap/Card';
-import { FaRegAddressCard } from 'react-icons/fa';
+import { Row, Col, Button } from 'react-bootstrap';
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
+import { Personal } from './personal';
+import { Opentabs } from './opentabs';
+import { Forkaia } from './forkaia';
+import { Tamuk } from './tamuk';
+import { Misc } from './misc';
 
 const Styles = styled.div`
-h2{
+#portfolio{
     text-align: center;
 }
-.card-columns{
-  text-align: center;
+.col{
+    display: flex;
+    -webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: distribute;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-align-content: center;
+	-ms-flex-line-pack: center;
+    align-content: center;
+}
+a{
+    color: #ec0024;
+}
+img{
+    margin: 0.5rem 0;
+}
+.nav-tabs{
+    display: flex;
+    border-bottom: 1px solid transparent;
+    justify-content: center;
+}
+.nav-link{
+    color: #09f;
+    background: transparent;
+    margin: 0 1rem;
+}
+.nav-link.active{
+    color: #09f;
+    background: transparent;
+    border: 1px solid #09f;
+}
+.tab-content{
+    margin-top: -1px;
+    padding: 1rem;
+    border: 1px solid lightgray;
+    border-radius: 0.25rem;
+}
+.nav-link:hover{
+    color: #6c3;
+    background: transparent;
+    border: 1px solid #6c3;
+}
+h6{
+    color: #113476;
+}
+.action-buttons .col{
+    padding: 0;
+}
+.action-buttons{
+    width: 100%;
+    margin: 0.25rem 0;
+}
+// .action-buttons a:last-child{
+//     margin-left: 0.5rem;
+// }
+.first-row .img-container:nth-child(1), .img-container:nth-child(2), .img-container:nth-child(3){
+    height: 300px;
+    transform: translate(0, 25%)
+}
+.second-row .img-container:nth-child(1), .img-container:nth-child(2), .img-container:nth-child(3){
+    height: 600px;
+    transform: translate(0, 25%)
+}
+a svg{
+    margin-right: 0.25rem;
 }
 `;
-// const responsive = {
-//     desktop: {
-//       breakpoint: { max: 3000, min: 1024 },
-//       items: 3,
-//       slidesToSlide: 3 // optional, default to 1.
-//     },
-//     tablet: {
-//       breakpoint: { max: 1024, min: 464 },
-//       items: 2,
-//       slidesToSlide: 2 // optional, default to 1.
-//     },
-//     mobile: {
-//       breakpoint: { max: 464, min: 0 },
-//       items: 1,
-//       slidesToSlide: 1 // optional, default to 1.
-//     }
-//   };
 
 export const Projects = () => (
-    <Styles>
-        {/* <Carousel
-  swipeable={false}
-  draggable={false}
-  showDots={true}
-  responsive={responsive}
-  ssr={true} // means to render carousel on server-side.
-  infinite={true}
-//   autoPlay={this.props.deviceType !== "mobile" ? true : false}
-  autoPlaySpeed={1000}
-  keyBoardControl={true}
-  customTransition="all .5"
-  transitionDuration={500}
-  containerClass="carousel-container"
-  removeArrowOnDeviceType={["tablet", "mobile"]}
-//   deviceType={this.props.deviceType}
-  dotListClass="custom-dot-list-style"
-  itemClass="carousel-item-padding-40-px"
->
-  <div>
-  <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 1</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  </div>
-  <div>
-  <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 2</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  </div><div>
-  <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 3</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  </div><div>
-  <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 4</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  </div><div>
-  <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 5</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  </div><div>
-  <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 6</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  </div>
-</Carousel> */}
-    <h2>PROJECTS</h2>
-    <CardColumns>
-    <Card>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 1</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  <Card>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 2</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  <Card>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 3</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-<Card>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 4</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  <Card>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 5</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-  <Card>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title 6</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-    </CardColumns>
-    
-    </Styles>
-)
+            <Styles style={{width: "100%"}}>
+                <div id="portfolio">
+                    <h2>PROJECTS</h2>
+                    <Tabs defaultActiveKey="personal">
+                    <Tab eventKey="all" title="All">                        
+                        <Personal />
+                        <Forkaia />
+                        {/* <Tamuk /> */}
+                        <Misc />
+                        <Opentabs />
+                    </Tab>
+                    <Tab eventKey="personal" title="Personal">
+                      <Personal />
+                    </Tab>
+                    <Tab eventKey="opentabs" title="OpenTabs">
+                        <Opentabs />
+                    </Tab>
+                    <Tab eventKey="forkaia" title="Forkaia">
+                        <Forkaia />
+                    </Tab>
+                    <Tab eventKey="tamuk" title="TAMUK">
+                        <Tamuk />
+                    </Tab>
+                    <Tab eventKey="misc" title="Miscellaneous">
+                        <Misc />
+                    </Tab>
+                    </Tabs>
+                </div>
+            </Styles>
+        )

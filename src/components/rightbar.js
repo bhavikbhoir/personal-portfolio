@@ -7,11 +7,11 @@ import { GoGlobe } from 'react-icons/go';
 const Styles = styled.div`
 .links{
     // display: inline-block!important;
-    text-align: right;
+    text-align: center;
     height:100vh;
     // right: 3vw;
-    width: 14.33vw;
-    position: fixed;
+    // width: 14.33vw;
+    // position: fixed;
     display: flex;
 			  -webkit-flex-wrap: wrap;
 			      -ms-flex-wrap: wrap;
@@ -36,7 +36,7 @@ li{
     list-style: none;
     font-weight: bold;
     letter-spacing: 1px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 1rem 0;
 }
 a{

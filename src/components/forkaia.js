@@ -67,14 +67,14 @@ ul{
 
 export const Forkaia = () => (
     <Styles>
-        <h2>Forkaia Projects</h2>
+        {/* <h2>Forkaia Projects</h2> */}
         <CardColumns>    
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={GC_Logo} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>GameChip</Card.Title>
                 <Card.Text>
@@ -85,7 +85,7 @@ export const Forkaia = () => (
                 </Card.Body>
                 </Col>
                 
-                <img src={GC} width="100%"/>
+                {/* <img src={GC} width="100%"/>
 
                 <Col style={{textAlign: "center"}}>
                     <Row>
@@ -109,16 +109,16 @@ export const Forkaia = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             </Card>
 
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={WYT_Logo} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>WhatYallThink</Card.Title>
                 <Card.Text>
@@ -129,7 +129,7 @@ export const Forkaia = () => (
                 </Card.Body>
                 </Col>
                 
-                <img src={WYT} width="100%"/>
+                {/* <img src={WYT} width="100%"/>
 
                 <Col style={{textAlign: "center"}}>
                     <Row>
@@ -153,16 +153,16 @@ export const Forkaia = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             </Card>
 
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={HG_Logo} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>Hiergraphics</Card.Title>
                 <Card.Text>
@@ -173,7 +173,7 @@ export const Forkaia = () => (
                 </Card.Body>
                 </Col>
                 
-                <img src={HG} width="100%"/>
+                {/* <img src={HG} width="100%"/>
 
                 <Col style={{textAlign: "center"}}>
                     <Row>
@@ -196,16 +196,16 @@ export const Forkaia = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             </Card>
 
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={Fovies_Logo} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>Fovies</Card.Title>
                 <Card.Text>
@@ -216,7 +216,7 @@ export const Forkaia = () => (
                 </Card.Body>
                 </Col>
                 
-                <img src={Fovies} width="100%"/>
+                {/* <img src={Fovies} width="100%"/>
 
                 <Col style={{textAlign: "center"}}>
                     <Row>
@@ -230,15 +230,15 @@ export const Forkaia = () => (
                         </ul>
                         </Col>
                     </Row>
-                        {/* <div>
+                        <div>
                         <h5>Tools</h5>
                         <ul>
                             <li>XAMPP</li>
                             <li>Apache</li>
                             <li>SQL Server Studio</li>
                         </ul>
-                        </div> */}
-                </Col>
+                        </div>
+                </Col> */}
             </Row>
             </Card>
 

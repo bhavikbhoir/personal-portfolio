@@ -31,7 +31,7 @@ const Styles = styled.div`
     width: 100%;
     font-weight: bold;
     letter-spacing: 1px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 a{
     color: white;

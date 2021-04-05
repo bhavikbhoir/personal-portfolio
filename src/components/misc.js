@@ -24,7 +24,7 @@ h2{
     text-align: left;
 }
     width: 100%;
-    padding: 1rem;
+    // padding: 1rem;
 }
 .card-img-top {
   width: 100%;
@@ -62,14 +62,14 @@ ul{
 
 export const Misc = () => (
     <Styles>
-        <h2>Miscellaneous Projects</h2>
+        {/* <h2>Miscellaneous Projects</h2> */}
         <CardColumns>    
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={RCD} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>React Decimal Counter</Card.Title>
                 <Card.Text>
@@ -81,7 +81,7 @@ export const Misc = () => (
                 </Card.Body>
                 </Col>
                 
-                <Col lg={12}><img src={RCD_Home} width="100%"/></Col>
+                {/* <Col lg={12}><img src={RCD_Home} width="100%"/></Col>
 
                 <Col style={{textAlign: "center"}}>
                     <Row>
@@ -104,15 +104,15 @@ export const Misc = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             </Card>
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={logo} width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>Vyorius</Card.Title>
                 <Card.Text>
@@ -123,7 +123,7 @@ export const Misc = () => (
                 </Card.Body>
                 </Col>
                 
-                <Col lg={12}>
+                {/* <Col lg={12}>
                 <img src={vyorius} width="100%"/>
                 </Col>
 
@@ -148,7 +148,7 @@ export const Misc = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
             </Card>
 </CardColumns>

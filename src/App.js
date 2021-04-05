@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
+import '../src/components/styles.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { Introduction } from './components/introduction';
@@ -11,7 +12,7 @@ import { Leftbar } from './components/leftbar';
 import { Rightbar } from './components/rightbar';
 import { Degrees } from './components/degrees';
 import { Projects } from './components/projects';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Personal } from './components/personal';
 import { Opentabs } from './components/opentabs';
 import { Forkaia } from './components/forkaia';
@@ -20,6 +21,10 @@ import { Misc } from './components/misc';
 import { TSkills } from './components/t-skills ';
 import { Certificates } from './components/certificates';
 import { Artwork } from './components/artwork';
+import Timeline from './components/Timeline';
+import { FaArrowAltCircleUp } from 'react-icons/fa';
+import { Carousel } from './components/carousel';
+import { Counter } from './components/counter';
 
 export default class App extends Component {
   state = {
@@ -38,6 +43,17 @@ export default class App extends Component {
       return null; // render null when app is not ready
     }
 
+    const scrollToRef = (ref) => {
+      const toShowDiv = document.querySelector(
+        "#root"
+      );
+      if (toShowDiv) toShowDiv.scrollIntoView();
+    };
+
+    const workflowClicked = (evt) => {
+      scrollToRef(evt);
+    }
+
   return (
     <div className="App">
       <div className="bg"></div>
@@ -45,12 +61,12 @@ export default class App extends Component {
       <div className="bg bg3"></div>
       <div className="content">
         <Row>
-          <Col lg={2} md={12} xs={12}>
+          <Col lg={2} md={12} xs={12} className="p-0 navbar">
           <div className="left-header">
             <Leftbar />
           </div>
           </Col>
-          <Col lg={8} md={12} xs={12}>
+          <Col lg={8} md={12} xs={12}  className="p-0 data">
           <div className="main-content">
           <Router>
             <Switch>
@@ -69,11 +85,27 @@ export default class App extends Component {
             <Route exact path="/Artwork" component={Artwork}/>
             </Switch>
           </Router>
+            <Counter />
+            <Timeline style={{width: "100%"}}/>
+            {/* <Degrees /> */}
+            <Projects style={{width: "100%"}}/>
+            {/* <Employers /> */}
+            {/* <TSkills /> */}
+            <Certificates />
+            <Carousel />
+            {/* <Artwork /> */}
           </div>  
           </Col>
-          <Col lg={2} md={12}>
+          <Col lg={2} md={12} className="p-0 social">
           <div className="right-header">
             <Rightbar />
+                      <Button
+                        className="scroll-btn"
+                        variant="Light"
+                        onClick={workflowClicked}
+                      >
+                        <FaArrowAltCircleUp />
+                      </Button>
           </div>
           </Col>
         </Row>

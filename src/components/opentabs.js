@@ -60,14 +60,14 @@ ul{
 
 export const Opentabs = () => (
     <Styles>
-        <h2>OpenTabs Projects</h2>
+        {/* <h2>OpenTabs Projects</h2> */}
         <CardColumns>    
             <Card>
             <Row>
-                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Col xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src="https://opentabs.org/images/logo.png" width="auto"/>
                 </Col>
-                <Col xl={11} xs={10}>
+                <Col xs={10}>
                 <Card.Body style={{paddingLeft: "0"}}>
                 <Card.Title>OpenTabs</Card.Title>
                 <Card.Text>
@@ -80,7 +80,7 @@ export const Opentabs = () => (
                 </Card.Body>
                 </Col>
                 
-                <img src={opentabsscreen} width="100%"/>
+                {/* <img src={opentabsscreen} width="100%"/>
                 
                 <Col style={{textAlign: "center"}}>
                     <Row>
@@ -107,7 +107,7 @@ export const Opentabs = () => (
                         </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
                 </Row>
             </Card>
         </CardColumns>
