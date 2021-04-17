@@ -53,7 +53,7 @@ export const Rightbar = () => (
     <Styles>
         <div className="links">
             <div className="ul">
-                <li><a target="_blank" href="https://www.linkedin.com/in/bhavikbhoir/"><FaLinkedin /></a></li>
+                {/* <li><a target="_blank" href="https://www.linkedin.com/in/bhavikbhoir/"><FaLinkedin /></a></li> */}
                 <li><a target="_blank" href="https://github.com/bhavikbhoir"><FaGithub /></a></li>
                 <li><a target="_blank" href="https://medium.com/@bhvkbhoir95"><FaMedium /></a></li>
                 <li><a target="_blank" href="https://www.facebook.com/bbhoir"><FaFacebook /></a></li>

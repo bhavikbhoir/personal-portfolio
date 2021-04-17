@@ -9,12 +9,12 @@ import ListGroupItem from 'react-bootstrap/ListGroup';
 import { FaUser, FaMapMarkerAlt, FaGithub, FaInfo, FaFigma } from 'react-icons/fa';
 import { GoGlobe } from 'react-icons/go';
 import Iframe from 'react-iframe'
-import TGW from '../assets/TGW.png'
+import TGW from '../assets/Screens/TGW.png'
 import TGWLogo from '../assets/TGW_logo.png'
 import covid from '../assets/covid.png'
-import covid_page from '../assets/Update2.png'
+import covid_page from '../assets/Screens/Covid.png'
 import FBBA from '../assets/FBBA.png'
-import FootBBall from '../assets/FootBBall-App.png'
+import FootBBall from '../assets/Screens/FBB.png'
 import FT from '../assets/FT.png'
 import FT_video from '../assets/FT.mp4'
 import FootyTabs from '../assets/FootyTabs.png'

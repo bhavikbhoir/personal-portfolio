@@ -80,12 +80,12 @@ export const Leftbar = () => (
                 </Col>
             </Row>
             <Row style={{width: "120%", margin: "0", padding: "0", display: "block"}}>
-                <Col>
+                {/* <Col>
             
             <Nav.Item>
             <Nav.Link href="/Experience"><FaIdBadge/> Experience</Nav.Link>
             </Nav.Item>
-            </Col>
+            </Col> */}
             <Col>
             <Nav.Item>
             <Nav.Link href="/Skills"><FaStar /> Skills</Nav.Link>

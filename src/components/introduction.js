@@ -118,10 +118,10 @@ export const Introduction = () => (
                                 <li><a href="https://bbhoir.web.app/"><GoGlobe /></a></li>     
                                 <br/>                    
                             </Col> */}
-                            <Col className="contact">
+                            {/* <Col className="contact">
                                 <li><FaPhone /> <a href="tel:1-571-635-7991">+1 (571) 635-7991</a></li>
                                 <li className="ml-3"><FaAt /> <a href = "mailto: bhvkbhoir95@gmail.com">bhvkbhoir95@gmail.com</a></li>
-                            </Col>
+                            </Col> */}
                         </Row>
                     </Col>
                 </Row>
