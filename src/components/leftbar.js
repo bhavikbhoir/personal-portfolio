@@ -93,16 +93,16 @@ export const Leftbar = () => (
             </Col>
             <Col>
             <Nav.Item>
-            <Nav.Link href="/Certificates"><FaCertificate/> Certifications</Nav.Link>
-            </Nav.Item>
-            </Col>
-            </Row>
-            <Row style={{width: "100%", margin: "0", padding: "0", display: "block"}}>
-            <Col>
-            <Nav.Item>
             <Nav.Link href="/Artwork"><FaPencilAlt/> Artwork</Nav.Link>
             </Nav.Item>
             </Col>
+            <Col>
+            <Nav.Item>
+            <Nav.Link href="/Certificates"><FaCertificate/> Certifications</Nav.Link>
+            </Nav.Item>
+            </Col>
+            {/* </Row>
+            <Row style={{width: "100%", margin: "0", padding: "0", display: "block"}}> */}
             </Row>
         </Nav>
         
