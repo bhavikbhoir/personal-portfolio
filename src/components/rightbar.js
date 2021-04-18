@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
-import {Row, Col, Container} from 'react-bootstrap';
+import React from 'react';
 import styled from 'styled-components';
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaUser, FaMedium } from 'react-icons/fa';
 import { GoGlobe } from 'react-icons/go';
 
 const Styles = styled.div`
 .links{
-    // display: inline-block!important;
     text-align: right;
     height:100vh;
-    // right: 3vw;
     width: 14.33vw;
     position: fixed;
     display: flex;

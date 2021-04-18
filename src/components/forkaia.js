@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import {Row, Col, Button, Container, CardColumns} from 'react-bootstrap';
+import {Row, Col, CardColumns} from 'react-bootstrap';
 import styled from 'styled-components';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import ListGroupItem from 'react-bootstrap/ListGroup';
-import { FaUser, FaMapMarkerAlt, FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { GoGlobe } from 'react-icons/go';
-import Iframe from 'react-iframe'
 import GC from '../assets/home-gc.jpg'
 import WYT from '../assets/home-wyt.jpg'
 import GC_Logo from '../assets/GC_logo.png'
@@ -33,7 +29,6 @@ h2{
 }
 .card-img-top {
   width: 100%;
-//   margin: 0.5rem;
   border-radius: 0.25rem;
 }
 #logo{
@@ -51,10 +46,6 @@ h2{
   -webkit-align-content: center;
       -ms-flex-line-pack: center;
     align-content: center;
-}
-img{
-    // margin: 2rem 0;
-    // border-radius: 25px;
 }
 a{
     color: #113476;
@@ -169,7 +160,6 @@ export const Forkaia = () => (
                     Prototype - Website still under development
                 </Card.Text>
                 <Card.Link href="https://github.com/bhavikbhoir/Hiergraphics" target="_blank"><FaGithub/> GitHub</Card.Link>
-                {/* <Card.Link href="https://whatyallthink.herokuapp.com/" target="_blank"><GoGlobe/> Live Version</Card.Link> */}
                 </Card.Body>
                 </Col>
                 
@@ -212,7 +202,6 @@ export const Forkaia = () => (
                     Prototype - Website still under development
                 </Card.Text>
                 <Card.Link href="https://github.com/bhavikbhoir/Fovies" target="_blank"><FaGithub/> GitHub</Card.Link>
-                {/* <Card.Link href="https://whatyallthink.herokuapp.com/" target="_blank"><GoGlobe/> Live Version</Card.Link> */}
                 </Card.Body>
                 </Col>
                 
@@ -230,14 +219,6 @@ export const Forkaia = () => (
                         </ul>
                         </Col>
                     </Row>
-                        {/* <div>
-                        <h5>Tools</h5>
-                        <ul>
-                            <li>XAMPP</li>
-                            <li>Apache</li>
-                            <li>SQL Server Studio</li>
-                        </ul>
-                        </div> */}
                 </Col>
             </Row>
             </Card>

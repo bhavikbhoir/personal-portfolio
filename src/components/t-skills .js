@@ -1,3 +1,5 @@
+/*Skills section using ag-grid - Needs work*/ 
+
 import React, { useState } from "react";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
 import styled from 'styled-components';

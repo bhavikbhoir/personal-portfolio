@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import {Row, Col, Container} from 'react-bootstrap';
+import React from 'react';
+import {Row, Col} from 'react-bootstrap';
 import styled from 'styled-components';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Navbar from 'react-bootstrap/Navbar'
-import { FaBook, FaCertificate, FaHome, FaIdBadge, FaLightbulb, FaPencilAlt, FaRProject, FaSketch, FaStar } from 'react-icons/fa';
+import { FaBook, FaCertificate, FaHome, FaLightbulb, FaPencilAlt, FaStar } from 'react-icons/fa';
 
 const Styles = styled.div`
 .navbar, .nav{
-    // display: inline-block!important;
     width: min-content;
     height:100vh;
     position: fixed;
@@ -52,62 +50,55 @@ svg {
 export const Leftbar = () => (
     <Styles>
         <div>
-        {/* <Navbar collapseOnSelect expand="lg">
-        <Navbar.Collapse id="responsive-navbar-nav"> */}
         <Nav activeKey="/">
             <Row style={{width: "100%", margin: "0", padding: "0", display: "block"}}>
                 <Col>
-                <Nav.Item>
-            <Nav.Link href="/"><FaHome /> Home</Nav.Link>
-            </Nav.Item>
-            </Col>
-            <Col>
+                    <Nav.Item>
+                        <Nav.Link href="/"><FaHome /> Home</Nav.Link>
+                    </Nav.Item>
+                </Col>
+                <Col>
+                    <Nav.Item>
+                        <Nav.Link href="/Education"><FaBook/> Education</Nav.Link>
+                    </Nav.Item>
+                </Col>
 
-            <Nav.Item>
-            <Nav.Link href="/Education"><FaBook/> Education</Nav.Link>
-            </Nav.Item>
-            </Col>
-            <Col className="d-flex">
-            <FaLightbulb style={{width: "16px", height: "16px", margin: "14px -10px 0 16px", color: "white"}}/><NavDropdown title="Projects" id="nav-dropdown" eventKey="/Projects">
-                <NavDropdown.Item href="/Projects/Personal">Personal</NavDropdown.Item>
-                <NavDropdown.Item href="/Projects/Opentabs">OpenTabs</NavDropdown.Item>
-                <NavDropdown.Item href="/Projects/Forkaia">Forkaia</NavDropdown.Item>
-                <NavDropdown.Item href="/Projects/TAMUK">Texas A&M University</NavDropdown.Item>
-                {/* <NavDropdown.Item href="/Projects/UOFM">University of Mumbai</NavDropdown.Item> */}
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="/Projects/Misc">Miscellaneous</NavDropdown.Item>
-            </NavDropdown>
+                <Col className="d-flex">
+                    <FaLightbulb style={{width: "16px", height: "16px", margin: "14px -10px 0 16px", color: "white"}}/><NavDropdown title="Projects" id="nav-dropdown" eventKey="/Projects">
+                        <NavDropdown.Item href="/Projects/Personal">Personal</NavDropdown.Item>
+                        <NavDropdown.Item href="/Projects/Opentabs">OpenTabs</NavDropdown.Item>
+                        <NavDropdown.Item href="/Projects/Forkaia">Forkaia</NavDropdown.Item>
+                        <NavDropdown.Item href="/Projects/TAMUK">Texas A&M University</NavDropdown.Item>
+                        {/* <NavDropdown.Item href="/Projects/UOFM">University of Mumbai</NavDropdown.Item> */}
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/Projects/Misc">Miscellaneous</NavDropdown.Item>
+                    </NavDropdown>
                 </Col>
             </Row>
             <Row style={{width: "120%", margin: "0", padding: "0", display: "block"}}>
-                {/* <Col>
+            {/* <Col>
             
             <Nav.Item>
             <Nav.Link href="/Experience"><FaIdBadge/> Experience</Nav.Link>
             </Nav.Item>
             </Col> */}
             <Col>
-            <Nav.Item>
-            <Nav.Link href="/Skills"><FaStar /> Skills</Nav.Link>
-            </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/Skills"><FaStar /> Skills</Nav.Link>
+                </Nav.Item>
             </Col>
             <Col>
-            <Nav.Item>
-            <Nav.Link href="/Artwork"><FaPencilAlt/> Artwork</Nav.Link>
-            </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/Artwork"><FaPencilAlt/> Artwork</Nav.Link>
+                </Nav.Item>
             </Col>
             <Col>
-            <Nav.Item>
-            <Nav.Link href="/Certificates"><FaCertificate/> Certifications</Nav.Link>
-            </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/Certificates"><FaCertificate/> Certifications</Nav.Link>
+                </Nav.Item>
             </Col>
-            {/* </Row>
-            <Row style={{width: "100%", margin: "0", padding: "0", display: "block"}}> */}
             </Row>
         </Nav>
-        
-  {/* </Navbar.Collapse>
-</Navbar> */}
         </div>
     </Styles>
 );

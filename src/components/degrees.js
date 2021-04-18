@@ -28,7 +28,6 @@ h2{
 img{
     width: 80%;
     height: 100%;
-    // padding: 15px;
 }
 .degree-header{
     min-height: 135px
@@ -57,7 +56,6 @@ export const Degrees = () => (
                             </Col>
                         </Row>
                     </div>
-                    {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>
                 </Card>
             
@@ -71,15 +69,14 @@ export const Degrees = () => (
                             <Col>
                                 <Card.Title>Bachelor of Engineering <br/> Electronics and Telecommunications Engineering</Card.Title>
                                 <Card.Text>
-                                    GPA: 3.70/4.00
+                                    GPA: 6.80/10.00
                                 </Card.Text>
                                 <Card.Text>
-                                    <strong>Coursework:</strong> Wireless Communication, Mobile Communication, Embedded Systems, Applied Mathematics, Operating Systems (OS), Integrated Circuits, Digital Communication.
+                                    <strong>Coursework:</strong> Structured Programming Approach, Object Oriented Programmin Methodology, Wireless Communication, Mobile Communication, Embedded Systems, Applied Mathematics, Operating Systems (OS), Integrated Circuits, Digital Communication.
                                 </Card.Text>
                             </Col>
                         </Row>
                     </div>
-                    {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>
                 </Card>
                 </CardColumns>

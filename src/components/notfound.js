@@ -29,7 +29,6 @@ const Styles = styled.div`
 
   body {
     max-width: 100%;
-    // _width: 500px;
     padding: 30px 20px 50px;
     border: 1px solid #b3b3b3;
     border-radius: 4px;

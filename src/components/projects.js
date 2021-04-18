@@ -1,3 +1,7 @@
+/*Needs work - Not in development 
+  Plan is to to have a page showcase all projects on one page with image/ Ui designs/ description/ Tech stack
+*/ 
+
 import React, { Component } from 'react';
 import {Row, Col, Button, Container, CardColumns} from 'react-bootstrap';
 import styled from 'styled-components';

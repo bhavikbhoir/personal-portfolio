@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
-import {Row, Col, Button, Container, CardColumns} from 'react-bootstrap';
+import React from 'react';
+import {Row, Col, CardColumns} from 'react-bootstrap';
 import styled from 'styled-components';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import ListGroupItem from 'react-bootstrap/ListGroup';
 import { FaUser, FaMapMarkerAlt, FaGithub, FaInfoCircle } from 'react-icons/fa';
 import { GoGlobe } from 'react-icons/go';
-import Iframe from 'react-iframe'
 import opentabsscreen from '../assets/opentabs.png'
 
 const Styles = styled.div`
 h2{
     text-align: center;
-    // font-weight: 700;
 }
 .card-columns {
     column-count: 1;
@@ -26,7 +21,6 @@ h2{
 }
 .card-img-top {
   width: 100%;
-//   margin: 0.5rem;
   border-radius: 0.25rem;
 }
 #logo{
@@ -44,10 +38,6 @@ h2{
   -webkit-align-content: center;
       -ms-flex-line-pack: center;
     align-content: center;
-}
-img{
-    // margin: 2rem 0;
-    // border-radius: 25px;
 }
 a{
     color: #113476;

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {Row, Col, Button, Container, CardColumns} from 'react-bootstrap';
+import {CardColumns} from 'react-bootstrap';
 import styled from 'styled-components';
 import Card from 'react-bootstrap/Card'
-
 import C from '../assets/certificates/C.jpg'
 import Cpp from '../assets/certificates/C++.jpg'
 import LabView from '../assets/certificates/LabVIEW.jpg'
@@ -12,7 +11,6 @@ import SQL from '../assets/certificates/SQL.jpg'
 import Tensorflow from '../assets/certificates/Tensorflow.jpg'
 import Unity from '../assets/certificates/Unity.jpg'
 import Web from '../assets/certificates/Web.jpg'
-import AllStar from '../assets/certificates/AllStar.jpg'
 import aws1 from '../assets/certificates/aws1.jpg'
 import aws2 from '../assets/certificates/aws2.jpg'
 

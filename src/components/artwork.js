@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Col, Button, Container, CardColumns} from 'react-bootstrap';
+import {CardColumns} from 'react-bootstrap';
 import styled from 'styled-components';
 import Card from 'react-bootstrap/Card'
 

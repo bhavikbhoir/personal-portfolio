@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
-import {Row, Col, Button, Container, CardColumns} from 'react-bootstrap';
+import React from 'react';
+import {Row, Col, CardColumns} from 'react-bootstrap';
 import styled from 'styled-components';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import ListGroupItem from 'react-bootstrap/ListGroup';
-import { FaUser, FaMapMarkerAlt, FaGithub } from 'react-icons/fa';
-import { GoGlobe } from 'react-icons/go';
-import cync from '../assets/cync_logo.png'
+import { FaUser, FaMapMarkerAlt } from 'react-icons/fa';
 import forkaia from '../assets/forkaia.png'
 import buttonwood from '../assets/buttonwood.png'
 
@@ -27,7 +22,6 @@ h2{
 }
 .card-img-top {
   width: 70px;
-  // margin: 0.5rem;
   border-radius: 0.25rem;
 }
 #logo{
@@ -56,7 +50,7 @@ ul{
 `;
 
 export const Employers = () => (
-    <Styles>
+  <Styles>
     <h2>WORK EXPERIENCE</h2>
     <CardColumns>
     <Card>
@@ -87,10 +81,6 @@ export const Employers = () => (
           <li>Involved in the analysis, design, development, and testing phases of the Software Development Lifecycle (SDLC).</li>
           <li>< strong>Technologies Used:</strong> HTML5, CSS3, SCSS, Bootstrap, JavaScript, TypeScript, React JS, Node JS, Express, MongoDB, PostgreSQL, Microservices, Babel, Webpack, Material UI, Microsoft Visual Studio, GitHub, Git, AWS, Docker. </li>
         </ul>
-        {/* <Card.Body>
-          <Card.Link href="#"><FaGithub/> GitHub</Card.Link>
-          <Card.Link href="#"><GoGlobe/> Live Version</Card.Link>
-        </Card.Body> */}
         </Col>
         </Row>
     </Card>
@@ -123,10 +113,6 @@ export const Employers = () => (
           <li>Worked in an agile and Test Driven Development (TDD) environment with daily meetings discussing the design and development of the current project and future updates/features.</li>
           <li><strong>Technologies Used:</strong> HTML5, CSS3, Bootstrap, JavaScript, TypeScript, ECMAScript 6/7, React JS, Node JS, Express, MongoDB, Webpack, Material UI, Microsoft Visual Studio, Figma, Photoshop, GitHub, Trello, PuTTY. </li>
         </ul>
-        {/* <Card.Body>
-          <Card.Link href="#"><FaGithub/> GitHub</Card.Link>
-          <Card.Link href="#"><GoGlobe/> Live Version</Card.Link>
-        </Card.Body> */}
         </Col>
         </Row>
     </Card>
@@ -160,10 +146,6 @@ export const Employers = () => (
           <li>Collaborated onsite and remotely with designers and the back-end development team across multiple projects.</li>
           <li><strong>Technologies Used:</strong> HTML5, CSS3, CSS Pre-processors, Bootstrap, JavaScript, Typescript, React JS, Angular 8/9, T-SQL, PHP, XAMPP, Webpack, JSON, Gimp, Photoshop, Figma, Sketch, Visual Studio Code, Sublime Text Editor, JIRA, GitHub.</li>
         </ul>
-        {/* <Card.Body>
-          <Card.Link href="#"><FaGithub/> GitHub</Card.Link>
-          <Card.Link href="#"><GoGlobe/> Live Version</Card.Link>
-        </Card.Body> */}
         </Col>
         </Row>
     </Card>
@@ -194,15 +176,9 @@ export const Employers = () => (
           <li>Conducted product analysis to understand the best path forward for design challenges.</li>
           <li><strong>Technologies Used:</strong> C#, .NET, JavaScript, Unity game engine, Jira, Slack, Trello, Visual Studio, and Microsoft Word.</li>
         </ul>
-        {/* <Card.Body>
-          <Card.Link href="#"><FaGithub/> GitHub</Card.Link>
-          <Card.Link href="#"><GoGlobe/> Live Version</Card.Link>
-        </Card.Body> */}
         </Col>
         </Row>
     </Card>
-    
-    </CardColumns>
-    
-    </Styles>
+    </CardColumns>  
+  </Styles>
 )
