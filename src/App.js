@@ -20,6 +20,7 @@ import { Misc } from './components/misc';
 import { TSkills } from './components/t-skills ';
 import { Certificates } from './components/certificates';
 import { Artwork } from './components/artwork';
+import { NotFound } from './components/notfound';
 
 export default class App extends Component {
   state = {
@@ -67,6 +68,7 @@ export default class App extends Component {
             <Route exact path="/Skills" component={TSkills} className="T-Skills"/>
             <Route exact path="/Certificates" component={Certificates}/>
             <Route exact path="/Artwork" component={Artwork}/>
+            <Route component={NotFound}/>
             </Switch>
           </Router>
           </div>  
