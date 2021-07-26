@@ -13,6 +13,8 @@ import Unity from '../assets/certificates/Unity.jpg'
 import Web from '../assets/certificates/Web.jpg'
 import aws1 from '../assets/certificates/aws1.jpg'
 import aws2 from '../assets/certificates/aws2.jpg'
+import aws3 from '../assets/certificates/aws3.png'
+import aws4 from '../assets/certificates/aws4.png'
 
 const Styles = styled.div`
 h2{
@@ -43,6 +45,22 @@ export const Certificates = () => (
             <Card.Body>
             <Card.Text>
                 AWS Solutions Training for Partners: Machine Learning (ML) on AWS for ML Practitioners - Technical (Classroom)
+            </Card.Text>
+            </Card.Body>
+        </Card>
+        <Card>
+            <Card.Img variant="top" src={aws3} />
+            <Card.Body>
+            <Card.Text>
+                Containers on AWS - Technical (Classroom)
+            </Card.Text>
+            </Card.Body>
+        </Card>
+        <Card>
+            <Card.Img variant="top" src={Matlab} />
+            <Card.Body>
+            <Card.Text>
+                MATLAB - Image Processing
             </Card.Text>
             </Card.Body>
         </Card>
@@ -79,10 +97,10 @@ export const Certificates = () => (
             </Card.Body>
         </Card>
         <Card>
-            <Card.Img variant="top" src={Matlab} />
+            <Card.Img variant="top" src={aws4} />
             <Card.Body>
             <Card.Text>
-                MATLAB - Image Processing
+                Data Analytics on AWS - Technical (Classroom)
             </Card.Text>
             </Card.Body>
         </Card>

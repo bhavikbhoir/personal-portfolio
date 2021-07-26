@@ -14,6 +14,11 @@ import FootBBall from '../assets/Screens/FBB.png'
 import FT from '../assets/FT.png'
 import FT_video from '../assets/FT.mp4'
 import FootyTabs from '../assets/FootyTabs.png'
+import Pokedex from '../assets/pokedex.png'
+import TPALogo from '../assets/pokedex-logo.png'
+import RSP from '../assets/react-signature-pad.PNG'
+import crs from '../assets/crs.jpg'
+import sp from '../assets/sp.jpg'
 
 const Styles = styled.div`
 h2{
@@ -59,8 +64,8 @@ ul{
 export const Personal = () => (
     <Styles style={{width: "100%"}}>
         <h2>Personal Projects</h2>
-        <CardColumns>    
-            <Card>
+        <CardColumns>   
+        <Card>
             <Row>
                 <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
                 <Card.Img variant="top" src={TGWLogo} width="auto"/>
@@ -95,6 +100,175 @@ export const Personal = () => (
                         <h6>Tools</h6>
                         <ul className="d-block">
                             <li>Google Analytics</li>
+                            <li>Firebase for deployment</li>
+                            <li>GitHub (Desktop/Git Terminal)</li>
+                        </ul>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            </Card>
+
+            <Card>
+            <Row>
+                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Card.Img variant="top" src={sp} width="auto"/>
+                </Col>
+                <Col xl={11} xs={10}>
+                <Card.Body style={{paddingLeft: "0"}}>
+                <Card.Title>React JS - Signature Pad</Card.Title>
+                <Card.Text>
+                Implement draw custom signature functionality in your React app similar to DocuSign and other e-sign applications.
+                </Card.Text>
+                <Card.Link href="https://github.com/bhavikbhoir/React-Signature-Pad" target="_blank"><FaGithub/> GitHub</Card.Link>
+                <Card.Link href="https://csb-ygdnb.netlify.app/" target="_blank"><GoGlobe/> Live Version</Card.Link>
+                </Card.Body>
+                </Col>
+                
+                <img src={RSP} width="100%"/>
+
+                <Col style={{textAlign: "center"}}>
+                    <Row>
+                        <Col>
+                        <h6>Tech stack</h6>
+                        <ul className="d-block">
+                            <li>React</li >
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        </Col>
+                        <Col>
+                        <h6>Tools</h6>
+                        <ul className="d-block">
+                            <li>Code-Sandbox</li>
+                            <li>Netlify for deployment</li>
+                            <li>GitHub (Desktop/Git Terminal)</li>
+                        </ul>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            </Card>
+
+            <Card>
+            <Row>
+                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Card.Img variant="top" src={crs} width="auto"/>
+                </Col>
+                <Col xl={11} xs={10}>
+                <Card.Body style={{paddingLeft: "0"}}>
+                <Card.Title>Custom React Searchbar</Card.Title>
+                <Card.Text>
+                A custom searchbar to let users select and retrieve search results from their favorite search engines.
+                </Card.Text>
+                <Card.Link href="https://github.com/bhavikbhoir/Custom_React_Searchbar" target="_blank"><FaGithub/> GitHub</Card.Link>
+                <Card.Link href="https://csb-hrmkl.netlify.app/" target="_blank"><GoGlobe/> Live Version</Card.Link>
+                </Card.Body>
+                </Col>
+                
+                <img src="https://user-images.githubusercontent.com/43330221/121641382-b9e83a80-ca54-11eb-89f6-4a0e71e6f8ce.png" width="100%"/>
+
+                <Col style={{textAlign: "center"}}>
+                    <Row>
+                        <Col>
+                        <h6>Tech stack</h6>
+                        <ul className="d-block">
+                            <li>React</li >
+                            <li>HTML</li>
+                            <li>SCSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        </Col>
+                        <Col>
+                        <h6>Tools</h6>
+                        <ul className="d-block">
+                            <li>Code-Sandbox</li>
+                            <li>Netlify for deployment</li>
+                            <li>GitHub (Desktop/Git Terminal)</li>
+                        </ul>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            </Card>
+
+            <Card>
+            <Row>
+                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Card.Img variant="top" src="https://rawcdn.githack.com/bhavikbhoir/Narutoverse-Jutsu/661e2032d3ef71fa9f02cc07dbd5321355d6165e/thumbnail.png" width="auto"/>
+                </Col>
+                <Col xl={11} xs={10}>
+                <Card.Body style={{paddingLeft: "0"}}>
+                <Card.Title>Narutoverse-Jutsu</Card.Title>
+                <Card.Text>
+                Information on the jutsus used by Narutoverse's Sun vs Moon i.e Rasengan (Naruto) vs Sharingan (Sasuke).
+                </Card.Text>
+                <Card.Link href="https://github.com/bhavikbhoir/Narutoverse-Jutsu" target="_blank"><FaGithub/> GitHub</Card.Link>
+                <Card.Link href="https://csb-oxp2u.netlify.app/" target="_blank"><GoGlobe/> Live Version</Card.Link>
+                </Card.Body>
+                </Col>
+                
+                <img src="https://user-images.githubusercontent.com/43330221/121462388-24767900-c976-11eb-99e8-302063e5a028.png" width="100%"/>
+
+                <Col style={{textAlign: "center"}}>
+                    <Row>
+                        <Col>
+                        <h6>Tech stack</h6>
+                        <ul className="d-block">
+                            <li>React</li >
+                            <li>HTML</li>
+                            <li>SCSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        </Col>
+                        <Col>
+                        <h6>Tools</h6>
+                        <ul className="d-block">
+                            <li>Code-Sandbox</li>
+                            <li>Netlify for deployment</li>
+                            <li>GitHub (Desktop/Git Terminal)</li>
+                        </ul>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            </Card>
+
+            <Card>
+            <Row>
+                <Col xl={1} xs={2} id="logo" style={{paddingRight: "0"}}>
+                <Card.Img variant="top" src={TPALogo} width="auto"/>
+                </Col>
+                <Col xl={11} xs={10}>
+                <Card.Body style={{paddingLeft: "0"}}>
+                <Card.Title>The Pokedex App</Card.Title>
+                <Card.Text>
+                    Know your Pokemon!
+                </Card.Text>
+                <Card.Link href="https://github.com/bhavikbhoir/The-Pokedex-App" target="_blank"><FaGithub/> GitHub</Card.Link>
+                <Card.Link href="https://the-pokedex-app.web.app/" target="_blank"><GoGlobe/> Live Version</Card.Link>
+                </Card.Body>
+                </Col>
+                
+                <img src={Pokedex} width="100%"/>
+
+                <Col style={{textAlign: "center"}}>
+                    <Row>
+                        <Col>
+                        <h6>Tech stack</h6>
+                        <ul className="d-block">
+                            <li>React</li >
+                            <li>React-Bootstrap</li>
+                            <li>React-Hooks</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        </Col>
+                        <Col>
+                        <h6>Tools</h6>
+                        <ul className="d-block">
                             <li>Firebase for deployment</li>
                             <li>GitHub (Desktop/Git Terminal)</li>
                         </ul>
