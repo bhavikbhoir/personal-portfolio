@@ -1,0 +1,228 @@
+@use 'styles/theme';
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+@use 'components/components';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// ── Reset ──────────────────────────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; background: var(--bg); color: var(--text); }
+
+body {
+  font-family: $font-family;
+  overflow: hidden;
+  transition: background var(--transition), color var(--transition);
+}
+
+h2 { color: var(--text); font-weight: 700; font-size: $font-2xl; margin-bottom: 1.25rem; }
+
+a { color: var(--accent-lt); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--accent-hover); }
+
+// ── Ambient blobs ──────────────────────────────────────────────────
+.bg-blob {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  animation: blob 14s ease-in-out infinite alternate;
+  background: radial-gradient(ellipse at 15% 55%, var(--accent-dim) 0%, transparent 55%);
+
+  &-2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 18s;
+    background: radial-gradient(ellipse at 80% 20%, var(--accent-shadow) 0%, transparent 50%);
+  }
+
+  &-3 {
+    animation-duration: 22s;
+    background: radial-gradient(ellipse at 50% 90%, var(--accent-shadow) 0%, transparent 45%);
+  }
+}
+
+@keyframes blob {
+  from { transform: translate(-8%, -4%); }
+  to   { transform: translate(8%, 4%); }
+}
+
+// ── Layout ─────────────────────────────────────────────────────────
+.app { height: 100vh; width: 100%; position: relative; overflow: hidden; }
+
+.layout {
+  position: relative; z-index: 1;
+  display: flex; height: 100vh;
+  padding: $space-lg; gap: $space-lg;
+}
+
+// ── Sidebar ────────────────────────────────────────────────────────
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  padding: $space-xl $space-md;
+  gap: $space-sm;
+}
+
+.sidebar-name {
+  font-size: $font-xl;
+  font-weight: 700;
+  color: var(--accent-lt);
+  letter-spacing: 1px;
+  text-align: center;
+  padding-bottom: $space-lg;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: $space-xs;
+}
+
+.nav-list { list-style: none; flex: 1; display: flex; flex-direction: column; gap: 2px; }
+
+.nav-btn {
+  width: 100%;
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px $space-md;
+  border: none; border-radius: $radius-md;
+  background: transparent;
+  color: var(--text-2);
+  font-size: $font-base; font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  text-align: left; font-family: inherit;
+
+  &:hover { background: var(--bg-hover); color: var(--text); }
+
+  &-active {
+    background: var(--accent-dim) !important;
+    color: var(--text) !important;
+
+    .nav-icon { color: var(--accent-lt); }
+  }
+}
+
+.nav-icon {
+  font-size: 0.85rem; flex-shrink: 0;
+  color: var(--text-3);
+  transition: color var(--transition);
+
+  .nav-btn:hover & { color: var(--text-2); }
+}
+
+.sidebar-footer {
+  display: flex; flex-direction: column; gap: 10px;
+  padding-top: $space-md; border-top: 1px solid var(--border);
+}
+
+.sidebar-socials {
+  display: flex; justify-content: center; gap: $space-sm;
+
+  a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: $space-sm;
+    color: var(--text-3); font-size: 0.95rem;
+    background: var(--surface-subtle); border: 1px solid var(--border);
+    transition: all var(--transition); text-decoration: none;
+
+    &:hover {
+      color: var(--accent-lt);
+      background: var(--accent-dim);
+      border-color: var(--accent-border);
+    }
+  }
+}
+
+.theme-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; padding: 7px; border-radius: $space-sm;
+  border: 1px solid var(--border); background: transparent;
+  color: var(--text-3); font-size: 0.8rem; gap: 6px;
+  cursor: pointer; font-family: inherit;
+  transition: all var(--transition);
+
+  &:hover {
+    color: var(--accent-lt);
+    border-color: var(--accent-border);
+    background: var(--accent-dim);
+  }
+}
+
+// ── Main content ───────────────────────────────────────────────────
+.main-content {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-y: auto; overflow-x: hidden;
+  padding: $space-2xl $space-3xl;
+  position: relative;
+
+  // Cursor spotlight
+  &.spotlight {
+    &::before {
+      content: '';
+      position: fixed;
+      width: 600px; height: 600px;
+      border-radius: $radius-full;
+      background: radial-gradient(circle, var(--accent-shadow) 0%, transparent 70%);
+      pointer-events: none;
+      left: var(--mx, -300px);
+      top: var(--my, -300px);
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:hover::before { opacity: 1; }
+  }
+
+  // Keep content above spotlight
+  > * { position: relative; z-index: 1; }
+
+  &::-webkit-scrollbar { width: 5px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: var(--accent-border); border-radius: 10px; }
+}
+
+// ── Panel transitions (handled by Framer Motion AnimatePresence) ──
+
+// ── Mobile bar ─────────────────────────────────────────────────────
+.mobile-bar { display: none; }
+
+@include mobile {
+  body { overflow: auto; }
+  .app { height: auto; overflow: auto; }
+
+  .mobile-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg-card); border-bottom: 1px solid var(--border);
+    padding: $space-md $space-lg;
+  }
+
+  .mobile-title { font-weight: 700; color: var(--accent-lt); font-size: $font-lg; }
+  .menu-btn { background: none; border: none; color: var(--text-2); font-size: 1.2rem; cursor: pointer; padding: $space-xs; }
+
+  .layout { flex-direction: column; padding: 0; gap: 0; height: auto; }
+
+  .sidebar {
+    width: 100%; border-radius: 0; border: none;
+    border-bottom: 1px solid var(--border);
+    padding: $space-md; display: none;
+    flex-direction: row; flex-wrap: wrap; gap: 6px;
+
+    &-open { display: flex; }
+    &-name { display: none; }
+    &-footer { display: none; }
+  }
+
+  .nav-list { flex-direction: row; flex-wrap: wrap; flex: unset; gap: $space-xs; }
+  .nav-btn { padding: 7px $space-md; font-size: 0.8rem; }
+
+  .main-content { border-radius: 0; padding: $space-xl $space-lg; min-height: 100vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

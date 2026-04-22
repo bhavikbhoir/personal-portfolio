@@ -1,0 +1,74 @@
+// ── Token definitions ──────────────────────────────────────────────
+// All raw values live here. Nothing else should use hex/rgba directly.
+
+// Dark theme (default)
+$color-bg:             #0d0f18;
+$color-bg-card:        #13151f;
+$color-bg-hover:       #1a1d2e;
+
+$color-accent:         #f59e0b;
+$color-accent-light:   #fbbf24;
+$color-accent-hover:   #fde68a;
+$color-accent-dim:     rgba(245, 158, 11, 0.15);
+$color-accent-border:  rgba(245, 158, 11, 0.3);
+$color-accent-shadow:  rgba(245, 158, 11, 0.1);
+
+$color-text:           #f1f5f9;
+$color-text-2:         #94a3b8;
+$color-text-3:         #64748b;
+
+$color-border:         rgba(255, 255, 255, 0.07);
+$color-surface-subtle: rgba(255, 255, 255, 0.04);
+$color-surface-tag:    rgba(255, 255, 255, 0.05);
+
+// Light theme overrides
+$color-bg-light:            #f8fafc;
+$color-bg-card-light:       #ffffff;
+$color-bg-hover-light:      #f1f5f9;
+$color-accent-light-theme:  #d97706;
+$color-accent-lt-light:     #f59e0b;
+$color-accent-dim-light:    rgba(217, 119, 6, 0.1);
+$color-accent-border-light: rgba(217, 119, 6, 0.3);
+$color-text-light:          #0f172a;
+$color-text-2-light:        #475569;
+$color-text-3-light:        #94a3b8;
+$color-border-light:        rgba(0, 0, 0, 0.08);
+
+// Spacing
+$space-xs:  4px;
+$space-sm:  8px;
+$space-md:  12px;
+$space-lg:  16px;
+$space-xl:  20px;
+$space-2xl: 32px;
+$space-3xl: 36px;
+
+// Typography
+$font-family: 'Inter', -apple-system, sans-serif;
+$font-xs:   0.7rem;
+$font-sm:   0.78rem;
+$font-base: 0.875rem;
+$font-md:   0.95rem;
+$font-lg:   1rem;
+$font-xl:   1.1rem;
+$font-2xl:  1.4rem;
+$font-3xl:  2.2rem;
+
+// Radii
+$radius-sm:  6px;
+$radius-md:  9px;
+$radius-lg:  12px;
+$radius-xl:  14px;
+$radius-pill: 20px;
+$radius-full: 50%;
+
+// Layout
+$sidebar-width: 200px;
+
+// Transitions
+$transition: 0.2s ease;
+$transition-fast: 0.15s ease;
+
+// Breakpoints
+$bp-mobile: 768px;
+$bp-art:    600px;

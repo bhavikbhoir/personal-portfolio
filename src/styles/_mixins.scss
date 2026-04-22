@@ -1,0 +1,43 @@
+// ── Reusable mixins ────────────────────────────────────────────────
+@use 'variables' as *;
+
+// Card base — shared by exp, deg, proj, cert, art cards
+@mixin card-base {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: $radius-lg;
+  transition: border-color $transition, box-shadow $transition;
+
+  &:hover {
+    border-color: var(--accent-border);
+    box-shadow: 0 4px 24px var(--accent-shadow);
+  }
+}
+
+// Accent badge — shared by role-badge, badge-current, badge-featured
+@mixin accent-badge {
+  display: inline-block;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-lt);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: $radius-pill;
+}
+
+// Flex row with gap
+@mixin flex-row($gap: $space-sm) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+}
+
+// Mobile breakpoint
+@mixin mobile {
+  @media (max-width: #{$bp-mobile}) { @content; }
+}
+
+@mixin art-mobile {
+  @media (max-width: #{$bp-art}) { @content; }
+}

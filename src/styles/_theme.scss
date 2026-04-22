@@ -1,0 +1,41 @@
+// ── CSS custom properties (runtime theme switching) ────────────────
+// Maps SCSS tokens → CSS vars so components use var(--x) for theming.
+
+@use 'variables' as *;
+
+:root {
+  --bg:             #{$color-bg};
+  --bg-card:        #{$color-bg-card};
+  --bg-hover:       #{$color-bg-hover};
+  --accent:         #{$color-accent};
+  --accent-lt:      #{$color-accent-light};
+  --accent-hover:   #{$color-accent-hover};
+  --accent-dim:     #{$color-accent-dim};
+  --accent-border:  #{$color-accent-border};
+  --accent-shadow:  #{$color-accent-shadow};
+  --text:           #{$color-text};
+  --text-2:         #{$color-text-2};
+  --text-3:         #{$color-text-3};
+  --border:         #{$color-border};
+  --surface-subtle: #{$color-surface-subtle};
+  --surface-tag:    #{$color-surface-tag};
+  --radius:         #{$radius-xl};
+  --sidebar-w:      #{$sidebar-width};
+  --transition:     #{$transition};
+}
+
+[data-theme='light'] {
+  --bg:             #{$color-bg-light};
+  --bg-card:        #{$color-bg-card-light};
+  --bg-hover:       #{$color-bg-hover-light};
+  --accent:         #{$color-accent-light-theme};
+  --accent-lt:      #{$color-accent-lt-light};
+  --accent-dim:     #{$color-accent-dim-light};
+  --accent-border:  #{$color-accent-border-light};
+  --text:           #{$color-text-light};
+  --text-2:         #{$color-text-2-light};
+  --text-3:         #{$color-text-3-light};
+  --border:         #{$color-border-light};
+  --surface-subtle: rgba(0, 0, 0, 0.02);
+  --surface-tag:    rgba(0, 0, 0, 0.04);
+}
