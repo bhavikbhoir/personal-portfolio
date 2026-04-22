@@ -29,7 +29,7 @@ const PROJECTS = [
     live: 'https://the-pokedex-app.web.app/',
   },
   {
-    logo: FT, featured: true, preview: FootyTabsScreen,
+    logo: FT, preview: FootyTabsScreen,
     title: 'FootyTabs',
     desc: 'A Chrome extension for Premier League fans — scores and news on every new tab.',
     tags: ['React', 'Bootstrap', 'Heroku', 'Figma'],
@@ -50,7 +50,7 @@ const PROJECTS = [
     desc: 'Track global COVID-19 pandemic statistics with live data.',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AWS S3'],
     github: 'https://github.com/bhavikbhoir/Covid-Tracker',
-    live: 'http://www.covid19-tracker.s3-website.ap-south-1.amazonaws.com/',
+    live: 'https://covid19-pandemic-tracker.web.app/',
   },
   {
     title: 'React Signature Pad',
