@@ -21,7 +21,8 @@ const NAV = [
   { id: 'projects',     label: 'Projects',       icon: <FaLightbulb /> },
   { id: 'skills',       label: 'Skills',         icon: <FaStar /> },
   { id: 'certificates', label: 'Certifications', icon: <FaCertificate /> },
-  { id: 'artwork',      label: 'Artwork',        icon: <FaPencilAlt /> },
+  // Artwork hidden for now — re-add the line below to restore it in the sidebar:
+  // { id: 'artwork', label: 'Artwork', icon: <FaPencilAlt /> },
 ];
 
 const SOCIALS = [
