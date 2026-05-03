@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt, FaDownload, FaArrowRight } from 'react-icons/fa';
 
-const STACK = ['React', 'Node.js', 'TypeScript', 'AWS', 'GraphQL', 'PostgreSQL', 'Docker', 'Serverless'];
-const ROLES = ['Full Stack Developer', 'Module Lead', 'Integration Lead'];
+const STACK = ['React', 'JavaScript', 'Node.js', 'AWS', 'Gen AI', 'AWS Bedrock', 'REST APIs', 'SCSS', 'PostgreSQL'];
+const ROLES = ['Full Stack Developer', 'Module Lead', 'Integration Lead', 'Gen AI Developer'];
 
 function Typewriter() {
   const [roleIdx, setRoleIdx] = useState(0);
@@ -82,8 +82,9 @@ export function Introduction({ navigate }) {
           I own end-to-end delivery — from React frontends and Node.js microservices to AWS serverless
           infrastructure, third-party integrations, and event-driven systems.
           <br /><br />
-          Currently serving as Module Lead at Idexcel, driving cross-module integrations across the full
-          LOS lifecycle and championing AI-powered tooling to accelerate engineering quality and delivery.
+          Currently serving as Module Lead at Idexcel. Outside of work, I build AI-powered applications
+          using AWS Bedrock and Claude — including a multi-turn AI agent with Bedrock Agent Core that
+          orchestrates real-time football data and fan Q&A entirely through LLM reasoning.
         </motion.p>
 
         <motion.div className="intro-actions" {...fadeUp(0.75)}>
