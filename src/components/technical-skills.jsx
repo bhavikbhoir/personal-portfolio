@@ -5,7 +5,7 @@ const CATEGORIES = [
   { title: 'Backend',           tags: ['Node.js','Express','REST APIs','GraphQL','Microservices','JWT','Kafka','Serverless Framework'] },
   { title: 'Databases',         tags: ['PostgreSQL','MongoDB','MySQL','DynamoDB','T-SQL'] },
   { title: 'Cloud / AWS',       tags: ['Lambda','API Gateway','S3','EC2','SNS','SQS','CloudWatch','IAM','SSM Parameter Store','AWS CodePipeline'] },
-  { title: 'AI / GenAI',        tags: ['AWS Bedrock','Bedrock Agent Core','Claude Sonnet','Prompt Engineering','LLM Integration','Bedrock Guardrails','AI Agent Orchestration','Tool Use / Function Calling','GitHub Copilot'] },
+  { title: 'AI / GenAI',        tags: ['AWS Bedrock','Bedrock Agent Core','Claude Sonnet 4.6','Prompt Engineering','LLM Integration','Bedrock Guardrails','AI Agent Orchestration','Tool Use / Function Calling','OpenAPI Schema Design','GitHub Copilot'] },
   { title: 'Testing & Quality', tags: ['Jest','React Testing Library','Mocha','Enzyme','SonarQube','Datadog'] },
   { title: 'DevOps & Tooling',  tags: ['Docker','Git/GitHub','GitHub Actions','Firebase','CI/CD','Webpack','Babel'] },
   { title: 'Process & Design',  tags: ['Agile/Scrum','JIRA','Confluence','Figma','System Design','Code Review'] },

@@ -15,8 +15,8 @@ const PROJECTS = [
   {
     logo: TGWLogo, featured: true, preview: TGWScreen,
     title: 'The Gooners World',
-    desc: 'Full-stack Arsenal F.C. platform — React SPA with live match scores, AI-powered pre-match predictions and post-match summaries (AWS Bedrock Nova Micro), a multi-turn AI fan chat agent (Claude Sonnet via Bedrock Agent Core), Champions League tracking, and a real-time news feed. Backed by a serverless Node.js API (AWS Lambda + API Gateway) with per-IP rate limiting, SSM-managed secrets, and a GitHub Actions CI/CD pipeline.',
-    tags: ['React 18', 'Vite', 'Node.js', 'AWS Lambda', 'API Gateway', 'AWS Bedrock', 'Claude Sonnet', 'Serverless Framework', 'Firebase', 'SCSS'],
+    desc: 'Full-stack Arsenal F.C. fan platform with live scores, AI predictions, post-match summaries, and a multi-turn chat agent — all powered by Claude Sonnet 4.6 via AWS Bedrock and Bedrock Agent Core. React SPA backed by serverless Node.js on AWS Lambda + API Gateway with GitHub Actions CI/CD.',
+    tags: ['React 18', 'Vite', 'Node.js', 'AWS Lambda', 'API Gateway', 'AWS Bedrock', 'Claude Sonnet 4.6', 'Bedrock Agent Core', 'Serverless Framework', 'Firebase', 'SCSS'],
     github: 'https://github.com/bhavikbhoir/the-gooners-world',
     live: 'https://the-gooners-world.web.app/',
   },
