@@ -3,24 +3,35 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt, FaDownload, FaArrowRight } from 'react-icons/fa';
 
 const STACK = ['React', 'JavaScript', 'Node.js', 'AWS', 'Gen AI', 'AWS Bedrock', 'REST APIs', 'SCSS', 'PostgreSQL'];
-const ROLES = ['Full Stack Developer', 'Module Lead', 'Integration Lead', 'Gen AI Developer'];
+const ROLES = ['Full Stack Developer', 'Gen AI Developer'];
+const MAX_CYCLES = 2;
 
 function Typewriter() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [text, setText] = useState('');
   const [deleting, setDeleting] = useState(false);
+  const [cycles, setCycles] = useState(0);
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
+    if (done) return;
     const target = ROLES[roleIdx];
     const speed = deleting ? 40 : 80;
 
     if (!deleting && text === target) {
+      const isLastRole = roleIdx === ROLES.length - 1;
+      if (isLastRole && cycles + 1 >= MAX_CYCLES) {
+        setDone(true);
+        return;
+      }
       const pause = setTimeout(() => setDeleting(true), 2000);
       return () => clearTimeout(pause);
     }
     if (deleting && text === '') {
       setDeleting(false);
-      setRoleIdx(i => (i + 1) % ROLES.length);
+      const nextIdx = (roleIdx + 1) % ROLES.length;
+      if (nextIdx === 0) setCycles(c => c + 1);
+      setRoleIdx(nextIdx);
       return;
     }
 
@@ -28,9 +39,9 @@ function Typewriter() {
       setText(deleting ? target.slice(0, text.length - 1) : target.slice(0, text.length + 1));
     }, speed);
     return () => clearTimeout(timer);
-  }, [text, deleting, roleIdx]);
+  }, [text, deleting, roleIdx, cycles, done]);
 
-  return <span className="typewriter">{text}<span className="cursor">|</span></span>;
+  return <span className="typewriter">{text}{!done && <span className="cursor">|</span>}</span>;
 }
 
 const fadeUp = (delay) => ({

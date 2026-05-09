@@ -2,12 +2,10 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { StaggerContainer, StaggerItem } from './motion';
 import TGWLogo from '../assets/TGW_logo.png';
 import TPALogo from '../assets/pokedex-logo.png';
-import covid from '../assets/covid.png';
 import FBBA from '../assets/FBBA.png';
 import FT from '../assets/FT.png';
 import TGWScreen from '../assets/Screens/TGW.png';
 import FBBScreen from '../assets/Screens/FBB.png';
-import CovidScreen from '../assets/Screens/Covid.png';
 import FootyTabsScreen from '../assets/FootyTabs.png';
 import PokedexScreen from '../assets/pokedex.png';
 
@@ -23,55 +21,26 @@ const PROJECTS = [
   {
     logo: FBBA, preview: FBBScreen,
     title: "The Foot'BB'all App",
-    desc: 'Live standings for Premier League, La Liga, Serie A, Bundesliga, Ligue 1, and Eredivisie plus Champions League updates.',
-    tags: ['React 18', 'Vite', 'Bootstrap 5', 'Sass', 'Firebase'],
+    desc: 'Multi-league football stats app covering Premier League, La Liga, Serie A, Bundesliga, Ligue 1, and Eredivisie — plus Champions League updates. Shares the same AWS Lambda + API Gateway backend as The Gooners World.',
+    tags: ['React 18', 'Vite', 'Bootstrap 5', 'Sass', 'Firebase', 'GitHub Actions'],
     github: 'https://github.com/bhavikbhoir/FootBBall-App',
     live: 'https://the-footbball-app.web.app/',
   },
   {
     logo: FT, featured: true, preview: FootyTabsScreen,
     title: 'FootyTabs',
-    desc: 'Chrome new-tab extension — real-time clock, weather, Premier League standings, fixtures, and multi-engine search bar.',
-    tags: ['React 18', 'Bootstrap 5', 'SCSS', 'Firebase', 'Dark Mode'],
+    desc: 'Chrome new-tab extension replacing the default new-tab page with a real-time football dashboard — Premier League standings, upcoming fixtures, weather, clock, and a multi-engine search bar. Built as a Chrome Manifest V3 extension.',
+    tags: ['React 18', 'Chrome Extension (MV3)', 'Bootstrap 5', 'SCSS', 'Firebase', 'Dark Mode'],
     github: 'https://github.com/bhavikbhoir/FootyTabs',
     live: 'https://footy-tabs.web.app/',
   },
   {
     logo: TPALogo, featured: true, preview: PokedexScreen,
-    title: 'The Pokedex App',
-    desc: 'Feature-rich Pokédex — search, compare Pokémon, evolution chains, type effectiveness, move details, shiny sprites, and sound playback.',
+    title: 'The Pokédex App',
+    desc: 'Feature-rich Pokédex SPA — search and compare Pokémon, evolution chains, type effectiveness, move details, shiny sprites, and sound playback via the PokéAPI.',
     tags: ['React', 'React Hooks', 'Bootstrap', 'PokéAPI', 'Firebase', 'Accessibility'],
     github: 'https://github.com/bhavikbhoir/The-Pokedex-App',
     live: 'https://the-pokedex-app.web.app/',
-  },
-  {
-    logo: covid, preview: CovidScreen,
-    title: 'Covid Tracker',
-    desc: 'Track global COVID-19 pandemic statistics with live data.',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'Firebase'],
-    github: 'https://github.com/bhavikbhoir/Covid-Tracker',
-    live: 'https://covid19-pandemic-tracker.web.app/',
-  },
-  {
-    title: 'React Signature Pad',
-    desc: 'DocuSign-style draw-your-signature component for React apps.',
-    tags: ['React', 'JavaScript', 'Netlify'],
-    github: 'https://github.com/bhavikbhoir/React-Signature-Pad',
-    live: 'https://csb-ygdnb.netlify.app/',
-  },
-  {
-    title: 'Custom React Searchbar',
-    desc: 'Search bar component letting users pick their favourite search engine.',
-    tags: ['React', 'SCSS', 'Netlify'],
-    github: 'https://github.com/bhavikbhoir/Custom_React_Searchbar',
-    live: 'https://csb-hrmkl.netlify.app/',
-  },
-  {
-    title: 'Narutoverse Jutsu',
-    desc: 'Rasengan vs Sharingan — info on jutsus from the Naruto universe.',
-    tags: ['React', 'SCSS', 'Netlify'],
-    github: 'https://github.com/bhavikbhoir/Narutoverse-Jutsu',
-    live: 'https://csb-oxp2u.netlify.app/',
   },
 ];
 

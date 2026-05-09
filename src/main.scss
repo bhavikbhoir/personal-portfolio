@@ -157,24 +157,26 @@ a:hover { color: var(--accent-hover); }
   padding: $space-2xl $space-3xl;
   position: relative;
 
-  // Cursor spotlight
-  &.spotlight {
-    &::before {
-      content: '';
-      position: fixed;
-      width: 600px; height: 600px;
-      border-radius: $radius-full;
-      background: radial-gradient(circle, var(--accent-shadow) 0%, transparent 70%);
-      pointer-events: none;
-      left: var(--mx, -300px);
-      top: var(--my, -300px);
-      transform: translate(-50%, -50%);
-      z-index: 0;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
+  // Cursor spotlight — disabled on touch devices
+  @media (pointer: fine) {
+    &.spotlight {
+      &::before {
+        content: '';
+        position: fixed;
+        width: 600px; height: 600px;
+        border-radius: $radius-full;
+        background: radial-gradient(circle, var(--accent-shadow) 0%, transparent 70%);
+        pointer-events: none;
+        left: var(--mx, -300px);
+        top: var(--my, -300px);
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
 
-    &:hover::before { opacity: 1; }
+      &:hover::before { opacity: 1; }
+    }
   }
 
   // Keep content above spotlight

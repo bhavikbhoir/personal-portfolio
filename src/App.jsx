@@ -11,16 +11,16 @@ import {
   FaHome, FaBriefcase, FaBook, FaLightbulb,
   FaStar, FaCertificate, FaPencilAlt,
   FaLinkedin, FaGithub, FaMedium,
-  FaBars, FaTimes, FaSun, FaMoon
+  FaBars, FaTimes, FaSun, FaMoon, FaDownload
 } from 'react-icons/fa';
 
 const NAV = [
   { id: 'home',         label: 'Home',          icon: <FaHome /> },
   { id: 'experience',   label: 'Experience',     icon: <FaBriefcase /> },
-  { id: 'education',    label: 'Education',      icon: <FaBook /> },
   { id: 'projects',     label: 'Projects',       icon: <FaLightbulb /> },
   { id: 'skills',       label: 'Skills',         icon: <FaStar /> },
   { id: 'certificates', label: 'Certifications', icon: <FaCertificate /> },
+  { id: 'education',    label: 'Education',      icon: <FaBook /> },
   // Artwork hidden for now — re-add the line below to restore it in the sidebar:
   // { id: 'artwork', label: 'Artwork', icon: <FaPencilAlt /> },
 ];
@@ -47,8 +47,15 @@ const panelVariants = {
   exit:   { opacity: 0, y: -12 },
 };
 
+const VALID_SECTIONS = new Set(NAV.map(n => n.id).concat(['artwork']));
+
+function hashToSection(hash) {
+  const id = hash.replace(/^#\/?/, '');
+  return VALID_SECTIONS.has(id) ? id : 'home';
+}
+
 export default function App() {
-  const [active, setActive] = useState('home');
+  const [active, setActive] = useState(() => hashToSection(window.location.hash));
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') ?? 'dark');
   const mainRef = useRef(null);
@@ -57,6 +64,13 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : '');
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  // Sync browser back/forward to active section
+  useEffect(() => {
+    const onPop = () => setActive(hashToSection(window.location.hash));
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   // Cursor spotlight
   useEffect(() => {
@@ -73,6 +87,7 @@ export default function App() {
   const navigate = (id) => {
     setActive(id);
     setMenuOpen(false);
+    window.history.pushState({}, '', `#${id}`);
     mainRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -114,6 +129,14 @@ export default function App() {
                 </a>
               ))}
             </div>
+            <a
+              className="theme-toggle"
+              href="/Bhavik_Bhoir_Resume.pdf"
+              download
+              aria-label="Download Resume"
+            >
+              <FaDownload /> Resume
+            </a>
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === 'dark' ? <><FaSun /> Light</> : <><FaMoon /> Dark</>}
             </button>
@@ -121,7 +144,7 @@ export default function App() {
         </nav>
 
         <main className="main-content spotlight" ref={mainRef}>
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="sync">
             <motion.div
               key={active}
               variants={panelVariants}

@@ -1,13 +1,13 @@
 import { StaggerContainer, StaggerItem } from './motion';
 
 const CATEGORIES = [
-  { title: 'Frontend',          tags: ['React','JavaScript','HTML5','CSS3/SCSS','Bootstrap','React Hooks','Context API','Vite','Framer Motion'] },
+  { title: 'Frontend',          tags: ['React','JavaScript','TypeScript','HTML5','CSS3/SCSS','Bootstrap','React Hooks','Context API','Vite','Framer Motion'] },
   { title: 'Backend',           tags: ['Node.js','Express','REST APIs','GraphQL','Microservices','JWT','Kafka','Serverless Framework'] },
-  { title: 'Databases',         tags: ['PostgreSQL','MongoDB','MySQL','DynamoDB','T-SQL'] },
+  { title: 'Databases',         tags: ['PostgreSQL','MongoDB','MySQL','DynamoDB'] },
   { title: 'Cloud / AWS',       tags: ['Lambda','API Gateway','S3','EC2','SNS','SQS','CloudWatch','IAM','SSM Parameter Store','AWS CodePipeline'] },
   { title: 'AI / GenAI',        tags: ['AWS Bedrock','Bedrock Agent Core','Claude Sonnet 4.6','Prompt Engineering','LLM Integration','Bedrock Guardrails','AI Agent Orchestration','Tool Use / Function Calling','OpenAPI Schema Design','GitHub Copilot'] },
-  { title: 'Testing & Quality', tags: ['Jest','React Testing Library','Mocha','Enzyme','SonarQube','Datadog'] },
-  { title: 'DevOps & Tooling',  tags: ['Docker','Git/GitHub','GitHub Actions','Firebase','CI/CD','Webpack','Babel'] },
+  { title: 'Testing & Quality', tags: ['Jest','React Testing Library','Mocha','SonarQube','Datadog'] },
+  { title: 'DevOps & Tooling',  tags: ['Docker','Git/GitHub','GitHub Actions','Firebase','CI/CD','Vite','ESBuild'] },
   { title: 'Process & Design',  tags: ['Agile/Scrum','JIRA','Confluence','Figma','System Design','Code Review'] },
 ];
 
