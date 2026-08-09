@@ -16,7 +16,7 @@ const PROJECTS = [
   {
     logo: ManifestLogo, featured: true, preview: ManifestScreen,
     title: 'MANIFEST',
-    desc: 'Collaborative AI group trip planner — the group submits preferences, Claude Sonnet 4.6 generates a day-by-day itinerary grounded in real OpenStreetMap opening hours and OSRM driving times, everyone suggests changes and approves the plan, then tracks events on the day and settles up expenses. Full-stack serverless: React + Framer Motion SPA backed by 30+ AWS Lambda functions, DynamoDB single-table design, Cognito JWT auth, and Leaflet maps — forced tool-use output from Bedrock guarantees structured JSON without prompt parsing.',
+    desc: 'Full-stack collaborative trip planner — Claude Sonnet 4.6 generates real-data-grounded itineraries (OpenStreetMap opening hours, OSRM driving times), the group suggests changes and approves the plan, then tracks events on the day and settles shared costs. React SPA + 30+ Lambda functions, DynamoDB single-table design, Cognito JWT auth, Leaflet maps, forced Bedrock tool-use for guaranteed structured output.',
     tags: ['React 18', 'Vite', 'Framer Motion', 'Node.js', 'AWS Lambda', 'DynamoDB', 'AWS Cognito', 'AWS Bedrock', 'Claude Sonnet 4.6', 'Leaflet', 'Serverless Framework', 'Firebase', 'SCSS'],
     github: 'https://github.com/bhavikbhoir/trip-planner',
     live: 'https://trip-planner-manifest.web.app/',
@@ -121,9 +121,6 @@ export function Projects() {
   return (
     <div className="projects">
       <h2>Projects</h2>
-      <StaggerContainer className="proj-grid">
-        {PROJECTS.map(p => <ProjectCard key={p.title} p={p} />)}
-      </StaggerContainer>
 
       <div className="active-dev-section">
         <h4 className="active-dev-heading">
@@ -134,6 +131,11 @@ export function Projects() {
           {ACTIVE_DEV.map(p => <ActiveCard key={p.title} p={p} />)}
         </StaggerContainer>
       </div>
+
+      <h4 className="proj-section-heading">Shipped</h4>
+      <StaggerContainer className="proj-grid">
+        {PROJECTS.map(p => <ProjectCard key={p.title} p={p} />)}
+      </StaggerContainer>
     </div>
   );
 }

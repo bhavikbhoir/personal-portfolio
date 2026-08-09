@@ -59,6 +59,18 @@ export function Certificates() {
     <div className="certificates">
       <h2>Certifications</h2>
 
+      <div className="cert-group">
+        <h4 className="cert-group-heading">Anthropic Learning Academy</h4>
+        <StaggerContainer className="cert-grid cert-grid-text">
+          {ANTHROPIC_COURSES.map(course => (
+            <StaggerItem key={course} className="cert-card cert-card-text">
+              <div className="cert-card-text-icon">A</div>
+              <div className="cert-label">{course}</div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </div>
+
       {CERT_GROUPS.map(group => (
         <div key={group.heading} className="cert-group">
           <h4 className="cert-group-heading">{group.heading}</h4>
@@ -72,21 +84,6 @@ export function Certificates() {
           </StaggerContainer>
         </div>
       ))}
-
-      <div className="cert-group">
-        <h4 className="cert-group-heading">
-          Anthropic Learning Academy
-          <span className="badge-inprogress">In Progress — {ANTHROPIC_COURSES.length} / 13 completed</span>
-        </h4>
-        <StaggerContainer className="cert-grid cert-grid-text">
-          {ANTHROPIC_COURSES.map(course => (
-            <StaggerItem key={course} className="cert-card cert-card-text">
-              <div className="cert-card-text-icon">A</div>
-              <div className="cert-label">{course}</div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-      </div>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt, FaDownload, FaArrowRight } from 'react-icons/fa';
+import headshotImg from '../assets/headshot.jpg';
 
-const STACK = ['React', 'JavaScript', 'Node.js', 'AWS', 'Gen AI', 'AWS Bedrock', 'REST APIs', 'SCSS', 'PostgreSQL'];
+const STACK = ['React', 'TypeScript', 'Node.js', 'AWS Bedrock', 'MCP', 'DynamoDB', 'pgvector', 'Kafka', 'Gen AI'];
 const ROLES = ['Full Stack Developer', 'Gen AI Developer'];
 const MAX_CYCLES = 2;
 
@@ -89,13 +90,11 @@ export function Introduction({ navigate }) {
         </h1>
 
         <motion.p className="tagline" {...fadeUp(0.6)}>
-          Full-Stack Developer with 5+ years building production-grade platforms in financial services.
-          I own end-to-end delivery — from React frontends and Node.js microservices to AWS serverless
-          infrastructure, third-party integrations, and event-driven systems.
-          <br /><br />
-          Currently serving as Module Lead at Idexcel. Outside of work, I build AI-powered applications
-          using AWS Bedrock and Claude — including a multi-turn AI agent with Bedrock Agent Core that
-          orchestrates real-time football data and fan Q&A entirely through LLM reasoning.
+          Full Stack Developer and AI engineer with 5+ years on an enterprise-scale financial lending
+          platform — leading multiple product modules, a cross-functional team of 14, and an integration
+          programme grown from 0 to 40+ vendor connections. I build end-to-end: React frontends,
+          Node.js and Python APIs, event-driven pipelines, LLM eval infrastructure, and production
+          AI agents on AWS Bedrock.
         </motion.p>
 
         <motion.div className="intro-actions" {...fadeUp(0.75)}>
@@ -127,6 +126,20 @@ export function Introduction({ navigate }) {
             </motion.span>
           ))}
         </motion.div>
+
+        <motion.div className="intro-stats" {...fadeUp(1.1)}>
+          {[
+            { value: '5+',  label: 'Years Experience' },
+            { value: '14',  label: 'Team Members Led' },
+            { value: '40+', label: 'Integrations Delivered' },
+            { value: '20+', label: 'AI Agents Built' },
+          ].map(({ value, label }) => (
+            <div key={label} className="stat-card">
+              <span className="stat-value">{value}</span>
+              <span className="stat-label">{label}</span>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       <motion.div
@@ -135,7 +148,7 @@ export function Introduction({ navigate }) {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
       >
-        <div className="avatar-initials">BB</div>
+        <img className="avatar-photo" src={headshotImg} alt="Bhavik Bhoir" />
       </motion.div>
     </div>
   );
