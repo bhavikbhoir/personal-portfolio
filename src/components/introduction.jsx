@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt, FaDownload, FaArrowRight } from 'react-icons/fa';
 import headshotImg from '../assets/headshot.jpg';
@@ -61,10 +61,17 @@ const letterVariants = {
 
 export function Introduction({ navigate }) {
   const name = "Bhavik Bhoir";
+  const words = name.split(' ');
+  let letterIndex = 0;
 
   return (
     <div className="intro">
       <div className="intro-text">
+        <motion.div className="status-row" {...fadeUp(0.02)}>
+          <span className="status-dot" aria-hidden="true" />
+          <span className="status-text">Open to <b>Full-Stack / Gen AI</b> roles · Herndon, VA</span>
+        </motion.div>
+
         <motion.span className="role-badge" {...fadeUp(0.1)}>
           <Typewriter />
         </motion.span>
@@ -73,18 +80,31 @@ export function Introduction({ navigate }) {
           <motion.span {...fadeUp(0.15)} style={{ display: 'inline-block', marginRight: '0.5rem' }}>
             Hey, I'm
           </motion.span>
-          {name.split('').map((char, i) => (
-            <motion.span
-              key={i}
-              className="hero-letter"
-              custom={i}
-              initial="hidden"
-              animate="visible"
-              variants={letterVariants}
-              style={{ display: 'inline-block' }}
-            >
-              {char === ' ' ? '\u00A0' : char}
-            </motion.span>
+          {words.map((word, wi) => (
+            // Each word is its own non-breaking unit \u2014 letters still animate
+            // individually, but the line can only wrap between words, never
+            // inside one (that's what split "Bhoir" across lines on mobile).
+            <Fragment key={wi}>
+              {wi > 0 && ' '}
+              <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+                {word.split('').map((char) => {
+                  const i = letterIndex++;
+                  return (
+                    <motion.span
+                      key={i}
+                      className="hero-letter"
+                      custom={i}
+                      initial="hidden"
+                      animate="visible"
+                      variants={letterVariants}
+                      style={{ display: 'inline-block' }}
+                    >
+                      {char}
+                    </motion.span>
+                  );
+                })}
+              </span>
+            </Fragment>
           ))}
           <motion.span {...fadeUp(0.8)} style={{ display: 'inline-block' }}> 👋</motion.span>
         </h1>
@@ -95,6 +115,13 @@ export function Introduction({ navigate }) {
           programme grown from 0 to 40+ vendor connections. I build end-to-end: React frontends,
           Node.js and Python APIs, event-driven pipelines, LLM eval infrastructure, and production
           AI agents on AWS Bedrock.
+        </motion.p>
+
+        {/* TODO(Bhavik): placeholder framing — replace with your real reason
+            for being open to roles now; recruiters read a single-employer,
+            currently-leading history with no context as an open question. */}
+        <motion.p className="career-note" {...fadeUp(0.68)}>
+          After five years scaling one platform end-to-end, I'm looking for the next problem worth building that kind of ownership around.
         </motion.p>
 
         <motion.div className="intro-actions" {...fadeUp(0.75)}>
@@ -149,6 +176,9 @@ export function Introduction({ navigate }) {
         transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
       >
         <img className="avatar-photo" src={headshotImg} alt="Bhavik Bhoir" />
+        <div className="photo-tag">
+          <FaMapMarkerAlt /> Based in <b>Herndon, VA</b> — open to remote
+        </div>
       </motion.div>
     </div>
   );

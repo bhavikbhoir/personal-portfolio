@@ -6,11 +6,12 @@
   background: var(--bg-hover);
   border: 1px solid var(--border);
   border-radius: $radius-lg;
-  transition: border-color $transition, box-shadow $transition;
+  transition: border-color $transition, box-shadow $transition, transform $transition;
 
   &:hover {
     border-color: var(--accent-border);
-    box-shadow: 0 4px 24px var(--accent-shadow);
+    box-shadow: 0 4px 20px var(--accent-shadow);
+    transform: translateY(-2px);
   }
 }
 

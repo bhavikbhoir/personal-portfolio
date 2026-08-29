@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Introduction } from './components/introduction';
 import { Employers } from './components/employers';
@@ -31,14 +31,19 @@ const SOCIALS = [
   { href: 'https://medium.com/@bhvkbhoir95',          icon: <FaMedium />,   label: 'Medium' },
 ];
 
+// "shell" pages center their content vertically in the viewport instead of
+// pinning it to the top — that's what fixed the dead-space problem on short
+// pages. "narrow" caps width for single-card content. "flow" (Projects,
+// Artwork) opts out deliberately: they're already long enough to scroll on
+// their own and don't need centering.
 const SECTIONS = {
-  home:         (nav) => <Introduction navigate={nav} />,
-  experience:   () => <Employers />,
-  education:    () => <Degrees />,
-  projects:     () => <Projects />,
-  skills:       () => <TSkills />,
-  certificates: () => <Certificates />,
-  artwork:      () => <Artwork />,
+  home:         (nav) => <div className="page-shell"><Introduction navigate={nav} /></div>,
+  experience:   () => <div className="page-shell page-shell-narrow"><Employers /></div>,
+  education:    () => <div className="page-shell page-shell-narrow"><Degrees /></div>,
+  projects:     () => <div className="page-flow"><Projects /></div>,
+  skills:       () => <div className="page-shell"><TSkills /></div>,
+  certificates: () => <div className="page-shell"><Certificates /></div>,
+  artwork:      () => <div className="page-flow"><Artwork /></div>,
 };
 
 const panelVariants = {
@@ -60,7 +65,11 @@ export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') ?? 'dark');
   const mainRef = useRef(null);
 
-  useEffect(() => {
+  // Layout effect (runs before paint), not a regular effect — a regular
+  // effect fires after the browser has already painted the previous theme,
+  // which is what made toggling look like a flash/flicker instead of an
+  // instant swap.
+  useLayoutEffect(() => {
     document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : '');
     localStorage.setItem('theme', theme);
   }, [theme]);
@@ -88,15 +97,17 @@ export default function App() {
     setActive(id);
     setMenuOpen(false);
     window.history.pushState({}, '', `#${id}`);
-    mainRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+    // Pages are content-height now (not a fixed internal-scroll box), so the
+    // page itself scrolls — reset the window, not the old main-content ref.
+    // Instant, not smooth: the page is about to change height/content anyway,
+    // so animating a scroll through soon-to-be-replaced content just looks odd.
+    window.scrollTo(0, 0);
   };
 
   const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark');
 
   return (
     <div className="app">
-      <div className="bg-blob" /><div className="bg-blob bg-blob-2" /><div className="bg-blob bg-blob-3" />
-
       <div className="mobile-bar">
         <span className="mobile-title">Bhavik Bhoir</span>
         <button className="menu-btn" onClick={() => setMenuOpen(o => !o)} aria-label="menu">
@@ -144,7 +155,12 @@ export default function App() {
         </nav>
 
         <main className="main-content spotlight" ref={mainRef}>
-          <AnimatePresence mode="sync">
+          <div className="bg-grid" aria-hidden="true" />
+
+          {/* "wait" — old panel fully exits before the new one mounts. Pages
+              are different heights now, so having both in the DOM at once
+              (mode="sync") stacked them on top of each other mid-transition. */}
+          <AnimatePresence mode="wait">
             <motion.div
               key={active}
               variants={panelVariants}
@@ -156,6 +172,14 @@ export default function App() {
               {SECTIONS[active](navigate)}
             </motion.div>
           </AnimatePresence>
+
+          <div className="floor-bar">
+            <a href="mailto:bhvkbhoir95@gmail.com">bhvkbhoir95@gmail.com</a>
+            <span className="floor-sep">·</span>
+            <a href="https://linkedin.com/in/bhavikbhoir" target="_blank" rel="noreferrer noopener">linkedin.com/in/bhavikbhoir</a>
+            <span className="floor-sep">·</span>
+            <a href="https://github.com/bhavikbhoir" target="_blank" rel="noreferrer noopener">github.com/bhavikbhoir</a>
+          </div>
         </main>
       </div>
     </div>

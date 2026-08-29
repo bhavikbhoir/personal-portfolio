@@ -1,57 +1,59 @@
 import { StaggerContainer, StaggerItem } from './motion';
-import C from '../assets/certificates/C.jpg';
-import Cpp from '../assets/certificates/C++.jpg';
-import LabView from '../assets/certificates/LabVIEW.jpg';
-import Matlab from '../assets/certificates/Matlab.jpg';
-import Python from '../assets/certificates/Python.jpg';
-import SQL from '../assets/certificates/SQL.jpg';
 import Tensorflow from '../assets/certificates/Tensorflow.jpg';
-import Unity from '../assets/certificates/Unity.jpg';
-import Web from '../assets/certificates/Web.jpg';
 import aws1 from '../assets/certificates/aws1.jpg';
 import aws2 from '../assets/certificates/aws2.jpg';
 import aws3 from '../assets/certificates/aws3.png';
 import aws4 from '../assets/certificates/aws4.png';
+import Web from '../assets/certificates/Web.jpg';
+import Python from '../assets/certificates/Python.jpg';
+import SQL from '../assets/certificates/SQL.jpg';
+import Matlab from '../assets/certificates/Matlab.jpg';
+import Unity from '../assets/certificates/Unity.jpg';
+import C from '../assets/certificates/C.jpg';
+import Cpp from '../assets/certificates/C++.jpg';
+import LabView from '../assets/certificates/LabVIEW.jpg';
 
+// Ordered by relevance to the Full-Stack / Gen AI pitch, most first.
 const CERT_GROUPS = [
   {
     heading: 'Cloud & AI',
     certs: [
-      { img: aws2, label: 'AWS Solutions Training: Machine Learning on AWS — ML Practitioners' },
-      { img: aws3, label: 'Containers on AWS — Technical' },
-      { img: aws4, label: 'Data Analytics on AWS — Technical' },
-      { img: aws1, label: 'AWS Solutions Training: Migrating to AWS — Technical' },
-      { img: Tensorflow, label: 'TensorFlow for Deep Learning with Python' },
+      { img: aws2, w: 1517, h: 1046, label: 'AWS Solutions Training: Machine Learning on AWS — ML Practitioners' },
+      { img: aws3, w: 1156, h: 794,  label: 'Containers on AWS — Technical' },
+      { img: aws4, w: 1049, h: 725,  label: 'Data Analytics on AWS — Technical' },
+      { img: aws1, w: 1522, h: 1039, label: 'AWS Solutions Training: Migrating to AWS — Technical' },
+      { img: Tensorflow, w: 1600, h: 1194, label: 'TensorFlow for Deep Learning with Python' },
     ],
   },
   {
     heading: 'Web Development',
     certs: [
-      { img: Web,    label: 'The Web Developer Bootcamp' },
-      { img: Python, label: 'Python Bootcamp' },
-      { img: SQL,    label: 'The Complete SQL Bootcamp' },
+      { img: Web,    w: 1600, h: 1194, label: 'The Web Developer Bootcamp' },
+      { img: Python, w: 1600, h: 1194, label: 'Python Bootcamp' },
+      { img: SQL,    w: 1600, h: 1194, label: 'The Complete SQL Bootcamp' },
     ],
   },
   {
     heading: 'Additional',
     certs: [
-      { img: Matlab,  label: 'MATLAB — Image Processing' },
-      { img: Unity,   label: 'Game Development with Unity' },
-      { img: C,       label: 'C Programming' },
-      { img: Cpp,     label: 'C++: From Beginner to Expert' },
-      { img: LabView, label: 'LabVIEW — Computer Vision & Image Processing' },
+      { img: Matlab,  w: 1600, h: 1194, label: 'MATLAB — Image Processing' },
+      { img: Unity,   w: 1600, h: 1194, label: 'Game Development with Unity' },
+      { img: C,       w: 1600, h: 1194, label: 'C Programming' },
+      { img: Cpp,     w: 1600, h: 1194, label: 'C++: From Beginner to Expert' },
+      { img: LabView, w: 1600, h: 1194, label: 'LabVIEW — Computer Vision & Image Processing' },
     ],
   },
 ];
 
+// Substantive courses first, intro/101-level ones after.
 const ANTHROPIC_COURSES = [
+  'Building with the Claude API',
+  'Introduction to Model Context Protocol',
+  'AI Fluency: Framework & Foundations',
+  'Claude Code in Action',
   'Claude 101',
   'Claude Code 101',
   'Introduction to Claude Cowork',
-  'Claude Code in Action',
-  'AI Fluency: Framework & Foundations',
-  'Building with the Claude API',
-  'Introduction to Model Context Protocol',
 ];
 
 export function Certificates() {
@@ -77,7 +79,9 @@ export function Certificates() {
           <StaggerContainer className="cert-grid">
             {group.certs.map(c => (
               <StaggerItem key={c.label} className="cert-card">
-                <img src={c.img} alt={c.label} loading="lazy" width="100%" />
+                <div className="cert-thumb" style={{ paddingBottom: `${(c.h / c.w) * 100}%` }}>
+                  <img src={c.img} alt={c.label} loading="lazy" />
+                </div>
                 <div className="cert-label">{c.label}</div>
               </StaggerItem>
             ))}

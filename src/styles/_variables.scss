@@ -13,6 +13,16 @@ $color-accent-dim:     rgba(245, 158, 11, 0.15);
 $color-accent-border:  rgba(245, 158, 11, 0.3);
 $color-accent-shadow:  rgba(245, 158, 11, 0.1);
 
+// Second accent — a cool teal against the warm amber, used deliberately
+// (gradient text, featured badges, glow) so the palette reads energetic
+// without tipping into anything playful/unprofessional.
+$color-accent2:         #2bb8a3;
+$color-accent2-light:   #5fd6c4;
+$color-accent2-hover:   #9ee9dc;
+$color-accent2-dim:     rgba(43, 184, 163, 0.15);
+$color-accent2-border:  rgba(43, 184, 163, 0.35);
+$color-accent2-shadow:  rgba(43, 184, 163, 0.15);
+
 $color-text:           #f1f5f9;
 $color-text-2:         #94a3b8;
 $color-text-3:         #64748b;
@@ -29,6 +39,10 @@ $color-accent-light-theme:  #d97706;
 $color-accent-lt-light:     #f59e0b;
 $color-accent-dim-light:    rgba(217, 119, 6, 0.1);
 $color-accent-border-light: rgba(217, 119, 6, 0.3);
+$color-accent2-light-theme:  #0f7d6c;
+$color-accent2-lt-light:     #14967f;
+$color-accent2-dim-light:    rgba(15, 125, 108, 0.1);
+$color-accent2-border-light: rgba(15, 125, 108, 0.3);
 $color-text-light:          #0f172a;
 $color-text-2-light:        #475569;
 $color-text-3-light:        #94a3b8;
@@ -45,6 +59,7 @@ $space-3xl: 36px;
 
 // Typography
 $font-family: 'Inter', -apple-system, sans-serif;
+$font-mono:   ui-monospace, 'SF Mono', 'Menlo', 'Cascadia Code', Consolas, monospace;
 $font-xs:   0.7rem;
 $font-sm:   0.78rem;
 $font-base: 0.875rem;

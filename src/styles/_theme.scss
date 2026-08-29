@@ -13,6 +13,12 @@
   --accent-dim:     #{$color-accent-dim};
   --accent-border:  #{$color-accent-border};
   --accent-shadow:  #{$color-accent-shadow};
+  --accent2:        #{$color-accent2};
+  --accent2-lt:     #{$color-accent2-light};
+  --accent2-hover:  #{$color-accent2-hover};
+  --accent2-dim:    #{$color-accent2-dim};
+  --accent2-border: #{$color-accent2-border};
+  --accent2-shadow: #{$color-accent2-shadow};
   --text:           #{$color-text};
   --text-2:         #{$color-text-2};
   --text-3:         #{$color-text-3};
@@ -32,6 +38,10 @@
   --accent-lt:      #{$color-accent-lt-light};
   --accent-dim:     #{$color-accent-dim-light};
   --accent-border:  #{$color-accent-border-light};
+  --accent2:        #{$color-accent2-light-theme};
+  --accent2-lt:     #{$color-accent2-lt-light};
+  --accent2-dim:    #{$color-accent2-dim-light};
+  --accent2-border: #{$color-accent2-border-light};
   --text:           #{$color-text-light};
   --text-2:         #{$color-text-2-light};
   --text-3:         #{$color-text-3-light};

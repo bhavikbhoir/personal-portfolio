@@ -8,48 +8,67 @@
 // ── Reset ──────────────────────────────────────────────────────────
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body { height: 100%; background: var(--bg); color: var(--text); }
+html, body { background: var(--bg); color: var(--text); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 
 body {
   font-family: $font-family;
-  overflow: hidden;
   transition: background var(--transition), color var(--transition);
 }
 
-h2 { color: var(--text); font-weight: 700; font-size: $font-2xl; margin-bottom: 1.25rem; }
+html::-webkit-scrollbar { width: 6px; }
+html::-webkit-scrollbar-track { background: transparent; }
+html::-webkit-scrollbar-thumb { background: var(--accent-border); border-radius: 10px; }
+
+h2 {
+  color: var(--text); font-weight: 700; font-size: $font-2xl; margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 10px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 5px; height: 1.3em;
+    border-radius: 3px;
+    background: var(--accent);
+  }
+}
 
 a { color: var(--accent-lt); text-decoration: none; transition: color var(--transition); }
 a:hover { color: var(--accent-hover); }
 
-// ── Ambient blobs ──────────────────────────────────────────────────
-.bg-blob {
+// ── Ambient background — quiet dot-grid ─────────────────────────────
+// Gives large viewports subtle texture instead of empty space. A second
+// element (an oversized "{ }" watermark) was tried here and removed: at
+// moderate viewport widths its centered position overlapped both the
+// sidebar and hero text, and a stacking bug let it paint over the sidebar
+// entirely. Dots carry no shape, so they can't visually corrupt content
+// the way that did — safe at any viewport size, no positioning to get wrong.
+.bg-grid {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  animation: blob 14s ease-in-out infinite alternate;
-  background: radial-gradient(ellipse at 15% 55%, var(--accent-dim) 0%, transparent 55%);
-
-  &-2 {
-    animation-direction: alternate-reverse;
-    animation-duration: 18s;
-    background: radial-gradient(ellipse at 80% 20%, var(--accent-shadow) 0%, transparent 50%);
-  }
-
-  &-3 {
-    animation-duration: 22s;
-    background: radial-gradient(ellipse at 50% 90%, var(--accent-shadow) 0%, transparent 45%);
-  }
+  background-image: radial-gradient(var(--bg-grid-dot, rgba(255, 255, 255, .035)) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 70% 60% at 68% 45%, black 0%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 68% 45%, black 0%, transparent 72%);
 }
 
-@keyframes blob {
-  from { transform: translate(-8%, -4%); }
-  to   { transform: translate(8%, 4%); }
+[data-theme='light'] .bg-grid {
+  --bg-grid-dot: rgba(0, 0, 0, .035);
 }
 
 // ── Layout ─────────────────────────────────────────────────────────
-.app { height: 100vh; width: 100%; position: relative; overflow: hidden; }
+// Pages size to their own content and the document scrolls naturally —
+// a fixed-height boxed shell left visible dead space under short sections
+// (Skills, Experience, the tail of Projects), including on Home itself.
+.app { min-height: 100vh; width: 100%; position: relative; }
 
 .layout {
   position: relative; z-index: 1;
-  display: flex; height: 100vh;
+  display: flex; align-items: flex-start; min-height: 100vh;
   padding: $space-lg; gap: $space-lg;
 }
 
@@ -57,6 +76,17 @@ a:hover { color: var(--accent-hover); }
 .sidebar {
   width: var(--sidebar-w);
   flex-shrink: 0;
+  position: sticky;
+  // Explicit stacking above bg-grid/bg-mark (z-index: 0) — without this,
+  // the fixed-position background mark could paint over the sidebar at
+  // moderate viewport widths where its centered position overlaps it.
+  z-index: 2;
+  top: $space-lg;
+  // Fixed height (not max-height) so the sidebar actually fills the sticky
+  // viewport slot instead of shrinking to its own short content height —
+  // that's what left a tall blank gap next to it on content-light pages
+  // like Home. nav-list's flex:1 then pushes sidebar-footer to the bottom.
+  height: calc(100vh - #{$space-lg} * 2);
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -64,6 +94,7 @@ a:hover { color: var(--accent-hover); }
   flex-direction: column;
   padding: $space-xl $space-md;
   gap: $space-sm;
+  overflow-y: auto;
 }
 
 .sidebar-name {
@@ -83,18 +114,19 @@ a:hover { color: var(--accent-hover); }
   width: 100%;
   display: flex; align-items: center; gap: 10px;
   padding: 9px $space-md;
-  border: none; border-radius: $radius-md;
+  border: none; border-left: 2px solid transparent; border-radius: $radius-md;
   background: transparent;
   color: var(--text-2);
   font-size: $font-base; font-weight: 500;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
   text-align: left; font-family: inherit;
 
   &:hover { background: var(--bg-hover); color: var(--text); }
 
   &-active {
     background: var(--accent-dim) !important;
+    border-left-color: var(--accent);
     color: var(--text) !important;
 
     .nav-icon { color: var(--accent-lt); }
@@ -147,13 +179,55 @@ a:hover { color: var(--accent-hover); }
   }
 }
 
+// ── Page shell ─────────────────────────────────────────────────────
+// Centers a page's content block vertically instead of pinning it to the
+// top — the fix for dead space under short sections (Skills, Experience,
+// Home). "narrow" pages just cap width on their own root class; "flow"
+// pages (Projects, Artwork) opt out because they're long enough to scroll
+// on their own and don't need centering.
+.page-shell {
+  position: relative; z-index: 1;
+  min-height: 60vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 48px 0;
+}
+
+.page-flow { position: relative; z-index: 1; }
+
+// Center the section title (icon-bar + text) within shell pages only —
+// Projects/Artwork (page-flow) keep the default left-aligned heading.
+.page-shell h2 { justify-content: center; }
+
+// Persistent contact line under every page's content — same on all of
+// them, flows naturally right after whichever section is active.
+.floor-bar {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: $space-lg;
+  border-top: 1px solid var(--border);
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  color: var(--text-3);
+
+  a:hover { color: var(--accent-lt); }
+  .floor-sep { opacity: 0.4; }
+
+  @include mobile { font-size: 0.68rem; gap: 6px; }
+}
+
 // ── Main content ───────────────────────────────────────────────────
 .main-content {
   flex: 1;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  // Fills the viewport slot (matching the sidebar) and lays its children out
+  // as a column so floor-bar's auto margin can pin it to the bottom — that's
+  // what stopped the footer jumping to a different Y position on every tab
+  // (it used to sit right after content, wherever that ended).
+  min-height: calc(100vh - #{$space-lg} * 2);
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius);
-  overflow-y: auto; overflow-x: hidden;
   padding: $space-2xl $space-3xl;
   position: relative;
 
@@ -163,9 +237,9 @@ a:hover { color: var(--accent-hover); }
       &::before {
         content: '';
         position: fixed;
-        width: 600px; height: 600px;
+        width: 320px; height: 320px;
         border-radius: $radius-full;
-        background: radial-gradient(circle, var(--accent-shadow) 0%, transparent 70%);
+        background: radial-gradient(circle, var(--accent-shadow) 0%, transparent 72%);
         pointer-events: none;
         left: var(--mx, -300px);
         top: var(--my, -300px);
@@ -175,16 +249,14 @@ a:hover { color: var(--accent-hover); }
         transition: opacity 0.3s;
       }
 
-      &:hover::before { opacity: 1; }
+      &:hover::before { opacity: 0.6; }
     }
   }
 
-  // Keep content above spotlight
-  > * { position: relative; z-index: 1; }
-
-  &::-webkit-scrollbar { width: 5px; }
-  &::-webkit-scrollbar-track { background: transparent; }
-  &::-webkit-scrollbar-thumb { background: var(--accent-border); border-radius: 10px; }
+  // Keep content above spotlight — excludes bg-grid/bg-mark, which need to
+  // stay position:fixed (this selector was overriding that and turning the
+  // huge bg-mark into a real in-flow element, pushing all content off-screen).
+  > *:not(.bg-grid):not(.bg-mark) { position: relative; z-index: 1; }
 }
 
 // ── Panel transitions (handled by Framer Motion AnimatePresence) ──
@@ -193,9 +265,6 @@ a:hover { color: var(--accent-hover); }
 .mobile-bar { display: none; }
 
 @include mobile {
-  body { overflow: auto; }
-  .app { height: auto; overflow: auto; }
-
   .mobile-bar {
     display: flex; align-items: center; justify-content: space-between;
     position: sticky; top: 0; z-index: 100;
@@ -206,13 +275,14 @@ a:hover { color: var(--accent-hover); }
   .mobile-title { font-weight: 700; color: var(--accent-lt); font-size: $font-lg; }
   .menu-btn { background: none; border: none; color: var(--text-2); font-size: 1.2rem; cursor: pointer; padding: $space-xs; }
 
-  .layout { flex-direction: column; padding: 0; gap: 0; height: auto; }
+  .layout { flex-direction: column; align-items: stretch; padding: 0; gap: 0; min-height: auto; }
 
   .sidebar {
     width: 100%; border-radius: 0; border: none;
     border-bottom: 1px solid var(--border);
     padding: $space-md; display: none;
     flex-direction: row; flex-wrap: wrap; gap: 6px;
+    position: static; max-height: none; overflow-y: visible;
 
     &-open { display: flex; }
     &-name { display: none; }

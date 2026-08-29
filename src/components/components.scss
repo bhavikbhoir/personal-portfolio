@@ -11,13 +11,24 @@
 // ── Introduction ───────────────────────────────────────────────────
 .intro {
   display: flex;
-  align-items: center;
+  // Top-aligned, not centered — centering against .intro-text pinned the
+  // photo to the vertical middle of the *whole* stacked block (status row
+  // through stat cards), which drifts every time that block's content
+  // changes length. Top-align + a small nudge keeps the photo anchored to
+  // the name/tagline instead.
+  align-items: flex-start;
   gap: 2rem;
   min-height: auto;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
   padding: 3rem 0 2rem;
 
   &-text { flex: 1; }
-  &-photo { flex-shrink: 0; }
+  // column + center — the avatar (180px) is narrower than the "Based in…"
+  // pill below it, so without this the pill (block, full shrink-to-fit
+  // width) and the circle didn't share a center line.
+  &-photo { flex-shrink: 0; margin-top: 0.5rem; display: flex; flex-direction: column; align-items: center; }
 
   @include mobile {
     flex-direction: column-reverse;
@@ -52,6 +63,18 @@
   border: 1px solid var(--accent-border);
   min-width: 90px;
   flex: 1;
+  transition: transform $transition;
+
+  &:hover { transform: translateY(-2px); }
+
+  // Alternate hue on every other stat so the row reads as one energetic
+  // set rather than four identical chips.
+  &:nth-child(even) {
+    background: var(--accent2-dim);
+    border-color: var(--accent2-border);
+
+    .stat-value { color: var(--accent2-lt); }
+  }
 }
 
 .stat-value {
@@ -67,6 +90,41 @@
   text-align: center;
   line-height: 1.3;
   font-weight: 500;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  color: var(--text-2);
+
+  b { color: var(--accent-lt); font-weight: 600; }
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+}
+
+.photo-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--text-3);
+  border: 1px solid var(--border);
+  border-radius: $radius-pill;
+  padding: 6px 14px;
+
+  b { color: var(--text-2); font-weight: 600; }
 }
 
 // Typewriter
@@ -94,11 +152,12 @@
 }
 
 .intro-text h1 {
-  font-size: $font-3xl;
-  font-weight: 700;
+  font-size: clamp(#{$font-3xl}, 4.5vw, 3.4rem);
+  font-weight: 800;
   color: var(--text);
   margin-bottom: 0.75rem;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .tagline {
@@ -106,6 +165,16 @@
   font-size: 0.9rem;
   line-height: 1.75;
   margin-bottom: 1.5rem;
+}
+
+.career-note {
+  color: var(--text-2);
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin: -0.75rem 0 1.5rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--accent-border);
 }
 
 .intro-actions {
@@ -175,13 +244,21 @@
   width: 180px; height: 180px; border-radius: $radius-full;
   object-fit: cover; object-position: center 25%;
   border: 3px solid var(--accent-border);
-  box-shadow: 0 0 0 6px var(--accent-dim), 0 8px 32px rgba(0,0,0,0.35);
+  box-shadow: 0 0 0 6px var(--accent-dim), 0 8px 32px rgba(0, 0, 0, 0.35);
   display: block;
 
   @include mobile { width: 110px; height: 110px; }
 }
 
 // ── Experience ─────────────────────────────────────────────────────
+// Narrow, centered column — a single card doesn't need the full width
+// of the page-shell to look composed.
+.employers {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .exp-card {
   @include card-base;
   padding: 1.5rem;
@@ -245,6 +322,12 @@
 }
 
 // ── Education ──────────────────────────────────────────────────────
+.degrees {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .deg-grid { display: flex; flex-direction: column; gap: 1rem; }
 
 .deg-card {
@@ -273,7 +356,13 @@
 // ── Projects ───────────────────────────────────────────────────────
 .proj-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  // auto-fit collapses tracks with no card into them (auto-fill would keep
+  // reserving empty 1fr columns beside a short row, e.g. the single-card
+  // "Currently Building" grid). dense backfills the gap two adjacent
+  // proj-featured (span 2) cards leave when a 1-col card can't fit the
+  // remaining space in their row.
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-flow: dense;
   gap: 1rem;
 }
 
@@ -284,26 +373,44 @@
   position: relative;
   overflow: hidden;
 
-  &:hover { transform: translateY(-2px); }
-  &.proj-featured { border-color: var(--accent-border); }
+  &.proj-featured {
+    border-color: var(--accent-border);
 
-  // Screenshot preview on hover
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: var(--accent);
+    }
+  }
+
+  // Screenshot preview on hover — grid-track reveal instead of animating
+  // `height` directly (which forces a synchronous layout recalc every frame).
+  // `object-fit: contain` (not cover) because source screenshots range from
+  // 16:9 desktop captures to a portrait phone mockup (MANIFEST) — cover would
+  // crop the mockup down to a sliver; contain letterboxes instead, never crops.
   .proj-preview {
-    height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
     overflow: hidden;
     border-radius: $radius-sm;
     margin: -$space-xs 0;
-    transition: height 0.35s ease, margin 0.35s ease;
+    transition: grid-template-rows 0.35s ease, margin 0.35s ease;
 
     img {
+      min-height: 0;
       width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: var(--surface-subtle);
       display: block;
       border-radius: $radius-sm;
     }
   }
 
   &:hover .proj-preview {
-    height: 160px;
+    grid-template-rows: 1fr;
     margin: 0 0 $space-sm;
   }
 }
@@ -409,9 +516,27 @@
   transition: all $transition-fast;
 
   &:hover { background: var(--accent-border); color: var(--accent-hover) !important; }
+
+  // Secondary CTA (e.g. "Connect MCP") — teal so it reads as a distinct
+  // action from Code/Live rather than a third identical amber pill.
+  &-accent {
+    border-color: var(--accent2-border);
+    color: var(--accent2-lt) !important;
+    background: var(--accent2-dim);
+
+    &:hover { background: var(--accent2-border); color: var(--accent2-hover) !important; }
+  }
 }
 
 // ── Skills ─────────────────────────────────────────────────────────
+// page-shell centers its children (align-items: center), so a grid child
+// needs an explicit width or it shrinks to fit instead of filling the row.
+.skills {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -447,6 +572,12 @@
 }
 
 // ── Certificates ───────────────────────────────────────────────────
+.certificates {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .cert-group { margin-bottom: 2rem; }
 
 .cert-group-heading {
@@ -482,10 +613,28 @@
 .cert-card {
   @include card-base;
   overflow: hidden;
+}
 
-  &:hover { transform: translateY(-2px); }
+// padding-bottom% box + absolutely-positioned img — the classic pre-`aspect-
+// ratio` reserved-box technique. Used here (instead of the `aspect-ratio`
+// property, which is used elsewhere in this file) because it forces a hard
+// pixel box the image cannot expand past regardless of its intrinsic size,
+// sidestepping a rendering issue where these particular cert scans were
+// displaying at close to native resolution instead of scaling to the card.
+.cert-thumb {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
 
-  img { width: 100%; display: block; }
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
 
 .cert-card-text {
