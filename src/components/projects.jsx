@@ -14,10 +14,11 @@ const PROJECTS = [
   {
     logo: ManifestLogo, featured: true, preview: ManifestScreen,
     title: 'MANIFEST',
-    desc: 'Full-stack collaborative trip planner — Claude Sonnet 4.6 generates real-data-grounded itineraries (OpenStreetMap opening hours, OSRM driving times, cuisine-aware restaurant picks), the group suggests changes and approves the plan, then tracks each day-of event as done, skipped, or swapped through to a post-trip recap and shared-cost settlement. React SPA + 30+ Lambda functions, DynamoDB single-table design, Cognito JWT auth (including self-serve password reset), Leaflet maps, forced Bedrock tool-use for guaranteed structured output.',
-    tags: ['React 18', 'Vite', 'Framer Motion', 'Node.js', 'AWS Lambda', 'DynamoDB', 'AWS Cognito', 'AWS Bedrock', 'Claude Sonnet 4.6', 'Leaflet', 'Serverless Framework', 'Firebase', 'SCSS'],
+    desc: 'Full-stack collaborative trip planner — Claude Sonnet 4.6 generates real-data-grounded itineraries (OpenStreetMap opening hours, OSRM driving times, cuisine-aware restaurant picks), the group suggests changes and approves the plan, then tracks each day-of event as done, skipped, or swapped through to a post-trip recap and shared-cost settlement. Ships an OAuth-protected remote MCP server — Dynamic Client Registration, 40 tools covering the full app (itinerary generation, bookings, expenses, day-of tracking) — so you can manage a trip by chatting with it from Claude Desktop. React SPA + 30+ Lambda functions, DynamoDB single-table design, Cognito JWT auth (self-serve password reset), Leaflet maps, forced Bedrock tool-use for guaranteed structured output.',
+    tags: ['React 18', 'Vite', 'Framer Motion', 'Node.js', 'AWS Lambda', 'DynamoDB', 'AWS Cognito', 'AWS Bedrock', 'Claude Sonnet 4.6', 'MCP Server (OAuth + DCR)', 'Leaflet', 'Serverless Framework', 'Firebase', 'SCSS'],
     github: 'https://github.com/bhavikbhoir/trip-planner',
     live: 'https://trip-planner-manifest.web.app/',
+    extraLink: { href: 'https://trip-planner-manifest.web.app/', label: 'Connect MCP' },
   },
   {
     logo: TGWLogo, featured: true, preview: TGWScreen,
