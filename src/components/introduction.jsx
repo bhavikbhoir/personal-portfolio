@@ -117,11 +117,8 @@ export function Introduction({ navigate }) {
           AI agents on AWS Bedrock.
         </motion.p>
 
-        {/* TODO(Bhavik): placeholder framing — replace with your real reason
-            for being open to roles now; recruiters read a single-employer,
-            currently-leading history with no context as an open question. */}
         <motion.p className="career-note" {...fadeUp(0.68)}>
-          After five years scaling one platform end-to-end, I'm looking for the next problem worth building that kind of ownership around.
+          Six years growing from early SPA work into a Module Lead role at Idexcel — including building out the platform's Gen AI agent work from scratch. Looking for a team where that's the core mandate, not something carved out alongside everything else.
         </motion.p>
 
         <motion.div className="intro-actions" {...fadeUp(0.75)}>

@@ -45,15 +45,29 @@ const CERT_GROUPS = [
   },
 ];
 
-// Substantive courses first, intro/101-level ones after.
-const ANTHROPIC_COURSES = [
-  'Building with the Claude API',
-  'Introduction to Model Context Protocol',
-  'AI Fluency: Framework & Foundations',
-  'Claude Code in Action',
-  'Claude 101',
-  'Claude Code 101',
-  'Introduction to Claude Cowork',
+// Text-based groups (no scanned image available) — icon-badge cards.
+// Substantive Anthropic courses first, intro/101-level ones after.
+const TEXT_CERT_GROUPS = [
+  {
+    heading: 'Anthropic Learning Academy', icon: 'A',
+    courses: [
+      'Building with the Claude API',
+      'Introduction to Model Context Protocol',
+      'AI Fluency: Framework & Foundations',
+      'Claude Code in Action',
+      'Claude 101',
+      'Claude Code 101',
+      'Introduction to Claude Cowork',
+    ],
+  },
+  {
+    heading: 'LinkedIn Learning', icon: 'L',
+    courses: [
+      'Designing RESTful APIs',
+      'Programming Foundations: APIs and Web Services',
+      'React: Testing and Debugging',
+    ],
+  },
 ];
 
 export function Certificates() {
@@ -61,17 +75,19 @@ export function Certificates() {
     <div className="certificates">
       <h2>Certifications</h2>
 
-      <div className="cert-group">
-        <h4 className="cert-group-heading">Anthropic Learning Academy</h4>
-        <StaggerContainer className="cert-grid cert-grid-text">
-          {ANTHROPIC_COURSES.map(course => (
-            <StaggerItem key={course} className="cert-card cert-card-text">
-              <div className="cert-card-text-icon">A</div>
-              <div className="cert-label">{course}</div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-      </div>
+      {TEXT_CERT_GROUPS.map(group => (
+        <div key={group.heading} className="cert-group">
+          <h4 className="cert-group-heading">{group.heading}</h4>
+          <StaggerContainer className="cert-grid cert-grid-text">
+            {group.courses.map(course => (
+              <StaggerItem key={course} className="cert-card cert-card-text">
+                <div className="cert-card-text-icon">{group.icon}</div>
+                <div className="cert-label">{course}</div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      ))}
 
       {CERT_GROUPS.map(group => (
         <div key={group.heading} className="cert-group">

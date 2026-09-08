@@ -7,14 +7,55 @@ const JOBS = [
     company: 'Idexcel Inc', role: 'Full Stack Developer — Module Lead',
     location: 'Herndon, VA', period: 'Sep 2020 – Present', current: true,
     bullets: [
-      'Grew the platform\'s third-party integration programme from 0 to 40+ live vendor connections — owned the full lifecycle: vendor outreach, technical and commercial discussions, API analysis, development, QA, and hands-on client onboarding for every rollout.',
+      'Own React UI development on a high-traffic financial lending platform — leading usability and performance improvements that reduce time-to-task and improve the day-to-day experience for internal loan-processing users.',
+      'Lead a 40+ live third-party vendor integration programme across the entire loan origination lifecycle (credit reporting, KYC/KYB identity verification, document generation, collateral and vehicle evaluation) and Outlook/Microsoft Teams CRM integration — driving architecture and integration design directly with product, design, and business stakeholders.',
+      'Build and ship Node.js/GraphQL APIs; architect event-driven pipelines on Kafka, SNS, and SQS across the lending lifecycle including identity verification, credit reporting, and document processing.',
       'Lead a cross-functional team of 14 (6 engineers, 2 BAs, 2 UI/UX, 4 QA) as Module Lead across multiple product modules — own sprint delivery end-to-end and drive architecture and solution design with product and business stakeholders.',
-      'Co-architected an AI agents platform on AWS Bedrock AgentCore — 20+ domain agents live across loan processing, campaigns, and document OCR — including an MCP Gateway and Node.js desktop extension on the official MCP SDK, an LLM-as-judge eval Lambda, and a RAG pipeline on pgvector and Titan embeddings.',
-      'Shipped a production anti-hallucination guardrail for AI-generated campaign drafts — every model-proposed audience filter is validated against the live filter registry before a draft is created; unrecognised filters drop silently rather than hallucinate into output.',
-      'Build and ship React + TypeScript frontends and Node.js/GraphQL APIs; architect event-driven pipelines on Kafka, SNS, and SQS across the lending lifecycle including identity verification, credit reporting, and document processing.',
-      'Drive engineering quality via Jest, RTL, SonarQube, and Datadog in CI/CD — shipped prompt eval harnesses alongside standard test suites to cover both code correctness and AI output reliability.',
+      'Architected a 20+ agent platform on AWS Bedrock AgentCore — autonomous, multi-step agents (MCP Gateway, RAG on pgvector, LLM-as-judge evaluation) driving loan-processing and document-analysis workflows, cutting document review from hours to minutes.',
+      'Shipped separate, direct-LLM-powered features across CRM workflows — automated campaign content generation with compliance validation (regulatory and client-specific policy checks via a live filter registry) and built-in A/B testing, cutting recurring campaign creation to under a minute; plus AI-generated meeting prep, note-taking, and summarisation (action items, next steps), cutting meeting prep and post-meeting documentation to under 5 minutes.',
+      'Built an AI-driven bulk document import pipeline — replacing manual, service-request-based bulk data loads with self-service upload, automated extraction/analysis, and user confirmation — turning a multi-person, multi-hour process into a single-user task completed in minutes.',
+      'Monitor production health using Datadog and AWS CloudWatch — triaging alerts, tracing root causes across distributed services, and coordinating hotfix releases; lead platform-wide Node.js and React upgrade initiatives, assessing package compatibility and rolling out safely across environments.',
+      'Drive engineering quality via Jest, RTL, SonarQube, and Datadog in CI/CD (GitHub Actions, AWS CodePipeline) — shipped prompt eval harnesses alongside standard test suites to cover both code correctness and AI output reliability.',
     ],
-    tags: ['React', 'TypeScript', 'Node.js', 'Python', 'GraphQL', 'Kafka', 'PostgreSQL', 'pgvector', 'DynamoDB', 'AWS Bedrock', 'Bedrock AgentCore', 'MCP', 'Textract', 'SonarQube', 'Datadog'],
+    tags: ['React', 'Node.js', 'GraphQL', 'Kafka', 'PostgreSQL', 'pgvector', 'DynamoDB', 'AWS Bedrock', 'Bedrock AgentCore', 'MCP', 'Textract', 'Microsoft Teams', 'Outlook/Graph', 'SonarQube', 'Datadog'],
+  },
+  {
+    initials: 'TB', color: '#6366f1',
+    company: 'Thought Byte, Inc.', role: 'Frontend Developer',
+    location: 'Nutley, NJ', period: 'Apr 2020 – Sep 2020',
+    bullets: [
+      'Built responsive, pixel-perfect UIs in React and Bootstrap, including a custom CAPTCHA using image-processing techniques for authentication workflows.',
+      'Integrated RESTful APIs on Node.js, Express, and SQL to drive dynamic data across the frontend.',
+    ],
+    tags: ['React', 'JavaScript', 'Bootstrap', 'Node.js', 'Express', 'SQL'],
+  },
+  {
+    initials: 'FK', color: '#0ea5e9',
+    company: 'Forkaia', role: 'Web Developer',
+    location: 'Irvine, CA', period: 'Aug 2019 – Apr 2020',
+    bullets: [
+      'Built responsive single-page applications from scratch with React, Redux, Angular 8/9, and TypeScript — translating Figma/Photoshop wireframes into accessible, WCAG-compliant layouts.',
+      'Designed secure login/registration with an authenticated user database on PHP and MySQL; deployed to Heroku and AWS. Recognised with a Distinguished Performer award.',
+    ],
+    tags: ['React', 'Redux', 'Angular', 'TypeScript', 'PHP', 'MySQL', 'Heroku', 'AWS'],
+  },
+  {
+    initials: 'BG', color: '#ef4444',
+    company: 'Buttonwood Gaming', role: 'Game Design & Development Intern',
+    period: 'Sep 2018 – Dec 2018',
+    bullets: [
+      'Accelerated prototype development by designing game screens in Unity using C# and JavaScript, maintaining code across networking, graphics, and gameplay mechanics.',
+    ],
+    tags: ['Unity', 'C#', 'JavaScript'],
+  },
+  {
+    initials: 'TK', color: '#8b5cf6',
+    company: 'Texas A&M University-Kingsville', role: 'Graduate Teaching Assistant',
+    location: 'Kingsville, TX', period: 'Oct 2018 – Nov 2018',
+    bullets: [
+      'Prepared and assisted in Digital Signal Processing coursework alongside the M.S. programme.',
+    ],
+    tags: ['DSP', 'MATLAB'],
   },
 ];
 

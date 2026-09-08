@@ -5,18 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0d0f18" />
   <link rel="manifest" href="/manifest.json" />
-  <script>
-    // Applied synchronously, before first paint — avoids a flash of the
-    // wrong theme on load (the React effect that normally sets this only
-    // runs after the DOM is already painted with the default dark styles).
-    (function () {
-      try {
-        if (localStorage.getItem('theme') === 'light') {
-          document.documentElement.setAttribute('data-theme', 'light');
-        }
-      } catch (e) {}
-    })();
-  </script>
+  <script src="/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />

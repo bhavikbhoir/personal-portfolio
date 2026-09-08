@@ -254,7 +254,10 @@
 // Narrow, centered column — a single card doesn't need the full width
 // of the page-shell to look composed.
 .employers {
-  max-width: 760px;
+  // Was 760px ("a single card doesn't need full width") back when this held
+  // exactly one job. It now holds five — matching every other tab's 1100px
+  // tier so the page doesn't visibly narrow when you land here.
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
 }
@@ -323,7 +326,8 @@
 
 // ── Education ──────────────────────────────────────────────────────
 .degrees {
-  max-width: 760px;
+  // Matches the 1100px tier used everywhere else — see .employers above.
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
 }
@@ -354,6 +358,15 @@
 }
 
 // ── Projects ───────────────────────────────────────────────────────
+// Matches the Skills/Certificates width tier (1100px) — this was the one
+// section-flow page with no cap at all, so it stretched to whatever width
+// main-content happened to be, unlike every other tab.
+.projects {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .proj-grid {
   display: grid;
   // auto-fit collapses tracks with no card into them (auto-fill would keep
@@ -666,6 +679,14 @@
 .cert-card-text .cert-label { padding: 0; }
 
 // ── Artwork ────────────────────────────────────────────────────────
+// Currently unreachable (hidden from nav in App.jsx) but capped here too so
+// the same no-max-width bug doesn't resurface if it's ever re-enabled.
+.artwork {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .artwork-intro { color: var(--text-3); font-size: $font-base; margin-bottom: 1.25rem; }
 
 .art-grid { columns: 2; gap: 1rem; }
