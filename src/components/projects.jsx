@@ -23,8 +23,8 @@ const PROJECTS = [
   {
     logo: TGWLogo, featured: true, preview: TGWScreen,
     title: 'The Gooners World',
-    desc: 'Full-stack Arsenal F.C. fan platform with live scores, AI predictions, post-match summaries, and a multi-turn chat agent powered by Claude Sonnet 4.6 via AWS Bedrock and Bedrock Agent Core. Ships its own public MCP server exposing fixtures, standings, and predictions as tools over remote Streamable HTTP — any MCP client can query it, not just this app — plus a matchday autopilot pipeline that drafts source-grounded social posts for human approval before publishing. React SPA backed by serverless Node.js on AWS Lambda + API Gateway with GitHub Actions CI/CD.',
-    tags: ['React 18', 'Vite', 'Node.js', 'AWS Lambda', 'API Gateway', 'AWS Bedrock', 'Claude Sonnet 4.6', 'Bedrock Agent Core', 'MCP Server (Streamable HTTP)', 'Serverless Framework', 'Firebase', 'SCSS'],
+    desc: 'Full-stack Arsenal F.C. fan platform with live scores, AI predictions, post-match summaries, and a multi-turn chat agent powered by Claude Sonnet 4.6 via AWS Bedrock and Bedrock Agent Core — now with hands-free voice conversation: native browser speech recognition where it works, an Amazon Transcribe streaming fallback for iOS and Firefox where it doesn\'t, and spoken replies via speech synthesis. Ships its own public MCP server exposing fixtures, standings, and predictions as tools over remote Streamable HTTP — any MCP client can query it, not just this app — plus a matchday autopilot pipeline that drafts source-grounded social posts for human approval before publishing. React SPA backed by serverless Node.js on AWS Lambda + API Gateway with GitHub Actions CI/CD.',
+    tags: ['React 18', 'Vite', 'Node.js', 'AWS Lambda', 'API Gateway', 'AWS Bedrock', 'Claude Sonnet 4.6', 'Bedrock Agent Core', 'MCP Server (Streamable HTTP)', 'Voice AI (Web Speech + Amazon Transcribe)', 'Serverless Framework', 'Firebase', 'SCSS'],
     github: 'https://github.com/bhavikbhoir/the-gooners-world',
     live: 'https://the-gooners-world.web.app/',
     extraLink: { href: 'https://the-gooners-world.web.app/About', label: 'Connect MCP' },
