@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt, FaDownload, FaArrowRight } from 'react-icons/fa';
 import headshotImg from '../assets/headshot.jpg';
 
-const STACK = ['React', 'TypeScript', 'Node.js', 'AWS Bedrock', 'MCP', 'DynamoDB', 'pgvector', 'Kafka', 'Gen AI'];
-const ROLES = ['Full Stack Developer', 'Gen AI Developer'];
+const STACK = ['Node.js', 'AWS Lambda', 'Kafka', 'AWS Bedrock', 'MCP', 'DynamoDB', 'pgvector', 'React', 'TypeScript'];
+const ROLES = ['Full-Stack Developer', 'AWS & Generative AI'];
 const MAX_CYCLES = 2;
 
 function Typewriter() {
@@ -110,11 +110,13 @@ export function Introduction({ navigate }) {
         </h1>
 
         <motion.p className="tagline" {...fadeUp(0.6)}>
-          Full Stack Developer and AI engineer with 5+ years on an enterprise-scale financial lending
-          platform — leading multiple product modules, a cross-functional team of 14, and an integration
-          programme grown from 0 to 40+ vendor connections. I build end-to-end: React frontends,
-          Node.js and Python APIs, event-driven pipelines, LLM eval infrastructure, and production
-          AI agents on AWS Bedrock.
+          Full-stack developer with 6+ years of experience building production platforms in financial
+          services, currently Module Lead at Idexcel. I own React UI and Node.js/Kafka backend
+          architecture for a high-traffic loan origination platform, lead a 40+ vendor integration
+          program across the loan lifecycle, and partner directly with product, design, and business
+          stakeholders on architecture. I lead the platform's Generative AI adoption, co-architecting
+          a 20+ agent system on AWS Bedrock AgentCore and shipping LLM features that cut recurring
+          workflows from hours to minutes.
         </motion.p>
 
         <motion.p className="career-note" {...fadeUp(0.68)}>
@@ -153,7 +155,7 @@ export function Introduction({ navigate }) {
 
         <motion.div className="intro-stats" {...fadeUp(1.1)}>
           {[
-            { value: '5+',  label: 'Years Experience' },
+            { value: '6+',  label: 'Years Experience' },
             { value: '14',  label: 'Team Members Led' },
             { value: '40+', label: 'Integrations Delivered' },
             { value: '20+', label: 'AI Agents Built' },

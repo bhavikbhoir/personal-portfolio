@@ -1,6 +1,6 @@
 # Bhavik Bhoir — Personal Portfolio
 
-Recruiter-facing portfolio for a Full Stack Developer / Module Lead with 5+ years building production-grade platforms in financial services.
+Recruiter-facing portfolio for a Full-Stack Developer / Module Lead with 6+ years building production-grade platforms in financial services.
 
 **Live:** https://bbhoir-portfolio.web.app/
 
@@ -17,10 +17,10 @@ Recruiter-facing portfolio for a Full Stack Developer / Module Lead with 5+ year
 | # | Section | Contents |
 |---|---|---|
 | 1 | Home | Typewriter role animation, hero name with per-letter entrance, tagline, resume download, contact links, tech stack pills |
-| 2 | Experience | 4 employer cards — Idexcel (current, Module Lead), OpenTabs, Forkaia, Buttonwood Gaming — with bullet-point detail and tech tags |
+| 2 | Experience | 5 employer cards — Idexcel (current, Module Lead), Thought Byte Inc., Forkaia, Buttonwood Gaming, Texas A&M-Kingsville (Graduate TA) — with bullet-point detail and tech tags |
 | 3 | Education | MS EEE at Texas A&M Kingsville (4.0 GPA) and BE E&T at University of Mumbai |
 | 4 | Projects | 9 projects — featured cards with hover-reveal screenshots, GitHub and live demo links |
-| 5 | Skills | 8 skill categories — Frontend, Backend, Databases, Cloud/AWS, AI/GenAI, Testing, DevOps, Process |
+| 5 | Skills | 8 skill categories — Backend, Cloud/AWS, AI/GenAI, Frontend, Databases, Testing, DevOps, Process |
 | 6 | Certifications | 13 certificates — 4 AWS courses, Udemy bootcamps (Web, Python, SQL, TensorFlow), Unity, C/C++, LabVIEW |
 | 7 | Artwork | 12 pieces of DC Comics and anime pencil and digital fan art |
 

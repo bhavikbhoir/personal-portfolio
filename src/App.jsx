@@ -81,6 +81,15 @@ export default function App() {
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
+  // Signals the build-time prerenderer (vite.config.js) that the initial
+  // content is in the DOM and ready to be captured as static HTML — content
+  // is present as soon as this fires regardless of Framer Motion's
+  // entrance-animation state (opacity/transform only, never conditional
+  // rendering), so there's no need to wait for animations to settle.
+  useEffect(() => {
+    document.dispatchEvent(new Event('render-event'));
+  }, []);
+
   // Cursor spotlight
   useEffect(() => {
     const el = mainRef.current;
